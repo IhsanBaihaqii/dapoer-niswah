@@ -1,0 +1,82 @@
+/* ── FOOTER ── */
+footer {
+  background: var(--hitam);
+  color: var(--coklat-muda);
+  padding: 60px 5% 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.footer-brand-name {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  color: var(--kuning);
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+.footer-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(160, 98, 42, 0.65);
+  max-width: 260px;
+}
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.soc-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+  background: rgba(245, 197, 24, 0.08);
+  border: 1px solid rgba(245, 197, 24, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.soc-btn:hover {
+  background: var(--kuning);
+  border-color: var(--kuning);
+}
+.soc-btn i {
+  font-size: 0.9rem;
+  color: var(--kuning-pale);
+}
+.soc-btn:hover i {
+  color: var(--coklat);
+}
+.footer-col h4 {
+  color: var(--kuning);
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 9px;
+}
+.footer-col ul li a {
+  color: rgba(160, 98, 42, 0.65);
+  text-decoration: none;
+  font-size: 0.84rem;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover {
+  color: var(--kuning);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(160, 98, 42, 0.15);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(160, 98, 42, 0.35);
+}

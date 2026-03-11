@@ -1,0 +1,46 @@
+/* ===== TESTIMONI (lebih fresh) ===== */
+#testimoni {
+  background: var(--krem-dark);
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 52px;
+}
+.testi-card {
+  background: var(--putih);
+  border-radius: 16px;
+  border: 1px solid rgba(245, 197, 24, 0.25);
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+}
+.testi-card:hover {
+  background: var(--kuning-pale);
+  border-color: var(--kuning);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px rgba(245, 197, 24, 0.15);
+}
+.testi-stars {
+  color: var(--kuning-deep);
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  letter-spacing: 3px;
+}
+.testi-text {
+  font-size: 0.88rem;
+  color: var(--coklat-mid);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testi-author {
+  font-weight: 700;
+  color: var(--coklat);
+  font-size: 0.85rem;
+}
+.testi-loc {
+  font-size: 0.75rem;
+  color: var(--coklat-muda);
+}

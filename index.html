@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dapoer Niswah – Jamu Tradisional Premium</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --kuning: #f5c518;
+        --kuning-deep: #d4a017;
+        --kuning-pale: #fdf3c0;
+        --orange: #e8621a;
+        --orange-light: #f28c4e;
+        --coklat: #2e1503;
+        --coklat-mid: #6b3a1f;
+        --coklat-muda: #a0622a;
+        --krem: #fbf3e4;
+        --krem-dark: #f0e2c8;
+        --hitam: #1a0c02;
+        --putih: #fffcf5;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--krem);
+        color: var(--coklat);
+        overflow-x: hidden;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--krem-dark);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--coklat-muda);
+        border-radius: 10px;
+      }
+
+      /* ── NOISE TEXTURE OVERLAY (lembut) ── */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.3;
+      }
+
+      /* ── NAVBAR ── */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        height: 64px;
+        background: var(--coklat);
+        border-bottom: 3px solid var(--kuning);
+      }
+      .nav-brand {
+        font-family: "Fraunces", serif;
+        font-size: 1.45rem;
+        color: var(--kuning);
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-brand span {
+        color: var(--orange-light);
+        font-style: italic;
+      }
+      .nav-brand-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--kuning);
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+        align-items: center;
+      }
+      .nav-links a {
+        color: rgba(253, 243, 192, 0.75);
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--kuning);
+      }
+      .nav-cart-btn {
+        background: var(--kuning);
+        color: var(--coklat);
+        border: none;
+        border-radius: 10px;
+        padding: 8px 14px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.25s;
+        position: relative;
+      }
+      .nav-cart-btn:hover {
+        background: var(--kuning-deep);
+        transform: translateY(-1px);
+      }
+      .cart-count {
+        background: var(--orange);
+        color: #fff;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+        position: absolute;
+        top: -6px;
+        right: -6px;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--kuning);
+        display: block;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+    </style>
+    <link rel="stylesheet" href="css/testimoni.css" />
+    <link rel="stylesheet" href="css/shoppingCart.css" />
+    <link rel="stylesheet" href="css/keunggulan.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/produk.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div
+        class="nav-brand"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      >
+        <div class="nav-brand-dot"></div>
+        Dapoer <span>Niswah</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" onclick="closeNav()">Home</a></li>
+        <li><a href="#keunggulan" onclick="closeNav()">Keunggulan</a></li>
+        <li><a href="#produk" onclick="closeNav()">Produk</a></li>
+        <li><a href="#about" onclick="closeNav()">Tentang</a></li>
+        <li><a href="#testimoni" onclick="closeNav()">Testimoni</a></li>
+        <li><a href="#contact" onclick="closeNav()">Kontak</a></li>
+      </ul>
+      <button class="nav-cart-btn" onclick="openCart()">
+        <i class="fa-solid fa-basket-shopping"></i> Keranjang
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero-pattern"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="leaf"><i class="fa-solid fa-leaf"></i></div>
+      <div class="leaf"><i class="fa-solid fa-leaf"></i></div>
+      <div class="leaf"><i class="fa-solid fa-seedling"></i></div>
+      <div class="leaf"><i class="fa-solid fa-leaf"></i></div>
+      <div class="leaf"><i class="fa-solid fa-spa"></i></div>
+      <div class="hero-badge">
+        <i class="fa-solid fa-seedling"></i> Jamu Tradisional Premium
+      </div>
+      <h1 class="hero-title">Dapoer <em>Niswah</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-subtitle">Warisan Leluhur, Khasiat Terpercaya</p>
+      <p class="hero-desc">
+        Jamu tradisional pilihan dari bahan rempah alami terbaik. Merawat
+        kesehatan dan kecantikan dengan cara yang sesungguhnya — seperti yang
+        dilakukan nenek moyang kita.
+      </p>
+      <div class="hero-btns">
+        <a href="#produk" class="btn-primary"
+          ><i class="fa-solid fa-cart-shopping"></i> Lihat Produk</a
+        >
+        <a href="#contact" class="btn-outline"
+          ><i class="fa-brands fa-whatsapp"></i> Hubungi Kami</a
+        >
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN (sekarang dengan border halus & kuning) -->
+    <section id="keunggulan">
+      <div style="text-align: center; max-width: 560px; margin: 0 auto">
+        <div class="section-label">
+          <i class="fa-solid fa-star"></i> Mengapa Memilih Kami
+        </div>
+        <h2 class="section-title">
+          Kualitas <span>Tanpa</span> <em>Kompromi</em>
+        </h2>
+        <p
+          style="color: var(--coklat-mid); line-height: 1.7; font-size: 0.93rem"
+        >
+          Setiap produk dibuat dengan penuh cinta menggunakan bahan rempah segar
+          pilihan, tanpa bahan pengawet berbahaya.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fa-solid fa-leaf feature-card-icon"></i>
+          <h3>Bahan Alami 100%</h3>
+          <p>
+            Dipilih langsung dari kebun rempah segar, tanpa campuran bahan kimia
+            berbahaya.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-mortar-pestle feature-card-icon"></i>
+          <h3>Resep Tradisional</h3>
+          <p>
+            Diolah menggunakan resep turun-temurun yang telah terbukti
+            khasiatnya selama generasi.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-shield-halved feature-card-icon"></i>
+          <h3>Higienis & Terjamin</h3>
+          <p>
+            Proses produksi bersih dan higienis memastikan kualitas setiap tetes
+            jamu kami.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-truck-fast feature-card-icon"></i>
+          <h3>Pengiriman Cepat</h3>
+          <p>
+            Tersedia pengiriman ke seluruh Indonesia. Pesan hari ini, segera
+            tiba di tangan Anda.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-tags feature-card-icon"></i>
+          <h3>Harga Terjangkau</h3>
+          <p>
+            Kesehatan bukan kemewahan. Kami hadir dengan harga yang bersahabat
+            untuk semua kalangan.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-heart feature-card-icon"></i>
+          <h3>Pelayanan Tulus</h3>
+          <p>
+            Konsultasi gratis, melayani dengan sepenuh hati untuk kesehatan
+            keluarga Anda.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-visual-badge">Sejak Generasi</div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">
+            <i class="fa-solid fa-book-open"></i> Cerita Kami
+          </div>
+          <h2 class="section-title">
+            Tentang <em>Dapoer</em> <span>Niswah</span>
+          </h2>
+          <p>
+            Jamu Dapoer Niswah adalah UMKM yang bergerak di bidang minuman
+            kesehatan tradisional, didirikan pada 27 Maret 2017 oleh Niswah
+            Lestari. Berawal dari kepedulian untuk menghadirkan minuman herbal
+            yang praktis, higienis, dan tetap autentik, Jamu Dapoer Niswah
+            menghadirkan berbagai produk jamu seperti beras kencur, kunyit asam,
+            temulawak, dan lainnya.
+          </p>
+          <p>
+            Setiap produk kami dibuat dengan tangan yang teliti, menggunakan
+            rempah-rempah segar pilihan dari petani lokal. Tidak ada bahan
+            pengawet, tidak ada pewarna buatan — hanya kebaikan alam yang murni
+            untuk keluarga Anda.
+          </p>
+          <p>
+            Mengusung misi untuk meningkatkan kesadaran masyarakat akan
+            pentingnya kesehatan alami, Jamu Dapoer Niswah terus berinovasi
+            dalam pengolahan dan penyajian jamu agar relevan dengan gaya hidup
+            modern tanpa meninggalkan resep tradisional Indonesia.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">10+</span
+              ><span class="stat-label">Varian Produk</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">500+</span
+              ><span class="stat-label">Pelanggan</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">100%</span
+              ><span class="stat-label">Alami</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section id="produk">
+      <div class="produk-header">
+        <div>
+          <div class="section-label">
+            <i class="fa-solid fa-boxes-stacked"></i> Koleksi Jamu Kami
+          </div>
+          <h2 class="section-title">
+            Produk <em>Pilihan</em> <span>Terbaik</span>
+          </h2>
+        </div>
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn active" onclick="filterProd('semua', this)">
+            Semua
+          </button>
+          <button class="filter-btn" onclick="filterProd('rimpang', this)">
+            Rimpang
+          </button>
+          <button class="filter-btn" onclick="filterProd('wanita', this)">
+            Kes. Wanita
+          </button>
+          <button class="filter-btn" onclick="filterProd('stamina', this)">
+            Stamina
+          </button>
+          <button class="filter-btn" onclick="filterProd('khusus', this)">
+            Khusus
+          </button>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- TESTIMONI (sekarang lebih soft) -->
+    <section id="testimoni">
+      <div style="text-align: center; max-width: 560px; margin: 0 auto">
+        <div class="section-label">
+          <i class="fa-solid fa-comments"></i> Kata Mereka
+        </div>
+        <h2 class="section-title">
+          Testimoni <em>Pelanggan</em> <span>Kami</span>
+        </h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "Sudah 3 bulan minum Induk Kunyit Jahe Merah dari Dapoer Niswah,
+            badan terasa lebih fit dan jarang sakit. Rasanya enak, tidak terlalu
+            pahit!"
+          </p>
+          <div class="testi-author">Ibu Sari W.</div>
+          <div class="testi-loc">📍 Jakarta</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "Kunyit Asam-nya segar banget! Cocok diminum sehari-hari. Harga juga
+            terjangkau dibanding yang lain. Recommended banget!"
+          </p>
+          <div class="testi-author">Mbak Rini A.</div>
+          <div class="testi-loc">📍 Yogyakarta</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "Jamu Bersalin-nya membantu pemulihan pasca melahirkan. Terima kasih
+            Dapoer Niswah, sudah jadi teman setia di masa nifas saya!"
+          </p>
+          <div class="testi-author">Bunda Dewi P.</div>
+          <div class="testi-loc">📍 Surabaya</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "Beras Kencur Dapoer Niswah beda dari yang lain, ada rasa legit dan
+            segar. Anak-anak di rumah malah suka banget!"
+          </p>
+          <div class="testi-author">Pak Hendra M.</div>
+          <div class="testi-loc">📍 Bandung</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "Temulawak-nya ampuh banget buat nafsu makan. Pelayanannya juga
+            ramah dan pengiriman cepat. Pasti order lagi!"
+          </p>
+          <div class="testi-author">Ibu Lestari N.</div>
+          <div class="testi-loc">📍 Semarang</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "Manjakani membantu sekali untuk kesehatan kewanitaan saya.
+            Produknya higienis, kualitas terjaga. Sangat puas!"
+          </p>
+          <div class="testi-author">Ibu Nadia R.</div>
+          <div class="testi-loc">📍 Medan</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div style="text-align: center; max-width: 560px; margin: 0 auto">
+        <div class="section-label">
+          <i class="fa-solid fa-envelope"></i> Hubungi Kami
+        </div>
+        <h2 class="section-title">Siap <em>Melayani</em> <span>Anda</span></h2>
+        <p
+          style="color: var(--coklat-mid); line-height: 1.7; font-size: 0.93rem"
+        >
+          Punya pertanyaan atau ingin pesan? Kami siap membantu Anda dengan
+          senang hati.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Temukan Kami Di Sini</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="contact-detail">
+              <a href="https://wa.me/6285312345678" target="_blank"
+                >+62 853-1234-5678</a
+              >
+              <small>WhatsApp – Chat langsung dengan kami</small>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="contact-detail">
+              <a href="https://instagram.com/dapoer_niswah" target="_blank"
+                >@dapoer_niswah</a
+              >
+              <small>Instagram – Follow untuk update produk terbaru</small>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div class="contact-detail">
+              <a href="https://facebook.com/niswah.lestari" target="_blank"
+                >niswah.lestari</a
+              >
+              <small>Facebook – Temukan kami di Facebook</small>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="contact-detail">
+              <strong style="color: var(--coklat)">Senin – Sabtu</strong>
+              <small>08.00 – 20.00 WIB</small>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Kirim Pesan 💬</h3>
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" id="fname" placeholder="Masukkan nama Anda" />
+          </div>
+          <div class="form-group">
+            <label>Nomor WhatsApp</label>
+            <input type="text" id="fwa" placeholder="08xx-xxxx-xxxx" />
+          </div>
+          <div class="form-group">
+            <label>Produk Yang Diminati</label>
+            <select id="fprod">
+              <option value="">-- Pilih Produk --</option>
+              <option>Induk Kunyit Jahe Merah</option>
+              <option>Kunyit Asam</option>
+              <option>Manjakani</option>
+              <option>Beras Kencur</option>
+              <option>Pati Kunyit</option>
+              <option>Kunir Singset</option>
+              <option>Temulawak</option>
+              <option>Jamu Bersalin</option>
+              <option>Jamu Rimpang</option>
+              <option>Jamu Celup</option>
+              <option>Bawang Putih Tunggal</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Pesan / Pertanyaan</label>
+            <textarea
+              id="fmsg"
+              placeholder="Tulis pesan atau pertanyaan Anda..."
+            ></textarea>
+          </div>
+          <button class="form-submit" onclick="sendWA()">
+            <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">Dapoer Niswah</div>
+          <p class="footer-desc">
+            Jamu tradisional premium dari bahan rempah alami terpilih. Menjaga
+            kesehatan keluarga Indonesia dengan cara yang sesungguhnya.
+          </p>
+          <div class="footer-social">
+            <a
+              class="soc-btn"
+              href="https://wa.me/6285312345678"
+              target="_blank"
+              title="WhatsApp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a
+              class="soc-btn"
+              href="https://instagram.com/dapoer_niswah"
+              target="_blank"
+              title="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              class="soc-btn"
+              href="https://facebook.com/niswah.lestari"
+              target="_blank"
+              title="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#keunggulan">Keunggulan</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Produk</h4>
+          <ul>
+            <li><a href="#produk">Induk Kunyit Jahe Merah</a></li>
+            <li><a href="#produk">Kunyit Asam</a></li>
+            <li><a href="#produk">Beras Kencur</a></li>
+            <li><a href="#produk">Temulawak</a></li>
+            <li><a href="#produk">Jamu Bersalin</a></li>
+            <li><a href="#produk">Jamu Celup</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Dapoer Niswah. Dibuat dengan
+        <i class="fa-solid fa-heart" style="color: var(--kuning)"></i> untuk
+        kesehatan Indonesia.
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="btt" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- CART OVERLAY + PANEL -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+      <div class="cart-panel-header">
+        <h2><i class="fa-solid fa-basket-shopping"></i> Keranjang Belanja</h2>
+        <button class="cart-close" onclick="closeCart()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <p>Keranjang masih kosong</p>
+          <p style="font-size: 0.8rem; opacity: 0.6">
+            Tambahkan produk untuk mulai belanja
+          </p>
+        </div>
+      </div>
+      <div class="cart-panel-footer">
+        <div class="cart-subtotal">
+          <span class="cart-subtotal-label">Total Pesanan</span>
+          <span class="cart-subtotal-val" id="cartTotal">Rp 0</span>
+        </div>
+        <button class="cart-checkout-wa" onclick="checkoutWA()">
+          <i class="fa-brands fa-whatsapp"></i> Pesan via WhatsApp
+        </button>
+        <button class="cart-clear" onclick="clearCart()">
+          <i class="fa-solid fa-trash-can"></i> Hapus Semua
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+      <div class="modal-box" id="modalBox">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div class="modal-img" id="mImg"></div>
+        <div class="modal-body">
+          <h2 id="mName"></h2>
+          <p class="modal-manfaat" id="mManfaat"></p>
+          <div class="modal-size-title">Pilih Ukuran</div>
+          <div class="modal-sizes" id="mSizes"></div>
+          <div class="modal-qty-row">
+            <span class="modal-qty-label">Jumlah</span>
+            <div class="modal-qty-controls">
+              <button class="modal-qty-btn" onclick="changeModalQty(-1)">
+                −
+              </button>
+              <span class="modal-qty-val" id="modalQtyVal">1</span>
+              <button class="modal-qty-btn" onclick="changeModalQty(1)">
+                +
+              </button>
+            </div>
+          </div>
+          <div class="modal-platform-title">Pesan Melalui</div>
+          <div class="modal-platforms">
+            <button class="modal-platform-btn mpb-wa" onclick="orderWA()">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </button>
+            <button
+              class="modal-platform-btn mpb-gofood"
+              onclick="orderGofood()"
+            >
+              <i class="fa-solid fa-motorcycle"></i> GoFood
+            </button>
+            <button
+              class="modal-platform-btn mpb-shopee"
+              onclick="orderShopee()"
+            >
+              <i class="fa-solid fa-shop"></i> Shopee
+            </button>
+            <button
+              class="modal-platform-btn mpb-cart"
+              onclick="addFromModal()"
+            >
+              <i class="fa-solid fa-basket-shopping"></i> Keranjang
+            </button>
+          </div>
+          <div class="modal-footer-space"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/produk.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
