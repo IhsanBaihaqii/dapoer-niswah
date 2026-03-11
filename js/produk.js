@@ -5,8 +5,7 @@ const produk = [
     kategori: "stamina",
     badge: "Terlaris",
     bgColor: "#F5C518",
-    deskripsi:
-      "Kombinasi dahsyat kunyit induk dan jahe merah pilihan untuk vitalitas optimal.",
+    deskripsi: "Meningkatkan daya tahan tubuh, stamina dan kinerja otak.",
     manfaat: "Meningkatkan daya tahan tubuh, stamina, dan kinerja otak.",
     ukuran: "60 mL",
     harga: "Rp 8.000",
