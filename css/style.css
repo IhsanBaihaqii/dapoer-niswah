@@ -292,6 +292,12 @@ section {
     gap: 16px;
     border-bottom: 3px solid var(--kuning);
   }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-brand-dot {
+    display: none;
+  }
   .nav-links.open {
     display: flex;
   }
