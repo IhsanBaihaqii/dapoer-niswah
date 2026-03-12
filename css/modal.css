@@ -215,14 +215,13 @@
 }
 
 .modal-qty-total {
-  margin-left: auto;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--coklat); /* sesuaikan dengan warna tema */
 }
 
 @media (max-width: 768px) {
-  .produk-name {
+  #mName {
     font-size: 1.1rem;
   }
 }
