@@ -185,7 +185,7 @@ function renderProduk(data) {
         </div>
 
         <div class="prod-price">
-          Rp ${formatNum(p.harga)}
+          ${formatNum(p.harga)}
         </div>
 
         <div class="prod-actions">
@@ -193,11 +193,9 @@ function renderProduk(data) {
             <i class="fa-solid fa-basket-shopping"></i> + Keranjang
           </button>
 
-          <a class="prod-wa"
-          href="https://wa.me/6285312345678?text=Halo%20Dapoer%20Niswah%2C%20saya%20ingin%20memesan%20${encodeURIComponent(p.nama)}"
-          target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> WA
-          </a>
+          <button class="prod-view" onclick="openDetail(${i})">
+            <i class="fa-solid fa-eye"></i> Lihat
+          </button>
 
         </div>
       </div>

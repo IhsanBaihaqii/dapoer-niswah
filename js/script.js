@@ -1,3 +1,198 @@
+const produk = [
+  {
+    nama: "Induk Kunyit Jahe Merah (60 mL)",
+    img: "assets/img/produk/induk-kunyit-jahe-merah.png",
+    kategori: "stamina",
+    badge: "Terlaris",
+    bgColor: "#F5C518",
+    deskripsi: "Meningkatkan daya tahan tubuh, stamina dan kinerja otak.",
+    manfaat: "Meningkatkan daya tahan tubuh, stamina, dan kinerja otak.",
+    ukuran: "60 mL",
+    harga: "Rp 8.000",
+    hargaNum: 8000,
+  },
+  {
+    nama: "Induk Kunyit Jahe Merah (250 mL)",
+    img: "assets/img/produk/induk-kunyit-jahe-merah.png",
+    kategori: "stamina",
+    badge: "Favorit",
+    bgColor: "#F5C518",
+    deskripsi:
+      "Kombinasi dahsyat kunyit induk dan jahe merah pilihan untuk vitalitas optimal.",
+    manfaat: "Meningkatkan daya tahan tubuh, stamina, dan kinerja otak.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Induk Kunyit Jahe Merah (500 mL)",
+    img: "assets/img/produk/induk-kunyit-jahe-merah.png",
+    kategori: "stamina",
+    badge: "Favorit",
+    bgColor: "#F5C518",
+    deskripsi:
+      "Kombinasi dahsyat kunyit induk dan jahe merah pilihan untuk vitalitas optimal.",
+    manfaat: "Meningkatkan daya tahan tubuh, stamina, dan kinerja otak.",
+    ukuran: "500 mL",
+    harga: "Rp 50.000",
+    hargaNum: 50000,
+  },
+  {
+    nama: "Jamu Bersalin",
+    img: "assets/img/produk/jamu-bersalin.png",
+    kategori: "wanita",
+    badge: "Eksklusif",
+    bgColor: "#A0622A",
+    deskripsi:
+      "Rahasia kecantikan dan kesehatan kewanitaan dari tanaman manjakani pilihan.",
+    manfaat:
+      "Menjaga kesehatan organ intim wanita dan meningkatkan kepercayaan diri.",
+    ukuran: "60 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Beras Kencur",
+    img: "assets/img/produk/beras-kencur.png",
+    kategori: "stamina",
+    badge: null,
+    bgColor: "#D4A017",
+    deskripsi: "Minuman tradisional segar beras kencur manis yang menyehatkan.",
+    manfaat: "Menambah nafsu makan dan meningkatkan stamina tubuh.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Pati Kunyit",
+    img: "assets/img/produk/pati-kunyit.png",
+    kategori: "rimpang",
+    badge: null,
+    bgColor: "#F5C518",
+    deskripsi: "Ekstrak pati kunyit murni dengan konsentrasi kurkumin tinggi.",
+    manfaat: "Antioksidan kuat untuk menjaga kesehatan hati dan imunitas.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Kunir Singset",
+    img: "assets/img/produk/kunir-singset.png",
+    kategori: "wanita",
+    badge: "Populer",
+    bgColor: "#E8621A",
+    deskripsi: "Formula khusus kunir untuk tubuh singset dan kecantikan alami.",
+    manfaat: "Membantu menjaga berat badan ideal dan mengencangkan tubuh.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Temulawak",
+    img: "assets/img/produk/temulawak.png",
+    kategori: "rimpang",
+    badge: null,
+    bgColor: "#A0622A",
+    deskripsi:
+      "Jamu temulawak tradisional untuk kesehatan hati dan nafsu makan.",
+    manfaat: "Menjaga fungsi hati dan meningkatkan nafsu makan.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Jamu Bersalin",
+    img: "assets/img/produk/jamu-bersalin.png",
+    kategori: "wanita",
+    badge: "Spesial",
+    bgColor: "#6B3A1F",
+    deskripsi: "Ramuan khusus ibu pasca melahirkan untuk pemulihan optimal.",
+    manfaat: "Membantu pemulihan tubuh dan memperlancar ASI.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Jamu Rimpang",
+    img: "assets/img/produk/jamu-rimpang.png",
+    kategori: "rimpang",
+    badge: null,
+    bgColor: "#2E1503",
+    deskripsi: "Perpaduan rempah rimpang lengkap untuk kesehatan menyeluruh.",
+    manfaat: "Meningkatkan imunitas dan melancarkan sirkulasi darah.",
+    ukuran: "250 mL",
+    harga: "Rp 30.000",
+    hargaNum: 30000,
+  },
+  {
+    nama: "Jamu Celup",
+    img: "assets/img/produk/jamu-celup.png",
+    kategori: "khusus",
+    badge: "Praktis",
+    bgColor: "#E8621A",
+    deskripsi: "Jamu tradisional dalam kemasan celup yang praktis diseduh.",
+    manfaat: "Membantu relaksasi dan menjaga kebugaran tubuh.",
+    ukuran: "per sachet",
+    harga: "Rp 35.000",
+    hargaNum: 35000,
+  },
+  {
+    nama: "Bawang Putih Tunggal",
+    img: "assets/img/produk/bawang-putih-tunggal.png",
+    kategori: "khusus",
+    badge: "Langka",
+    bgColor: "#A0622A",
+    deskripsi: "Ekstrak bawang putih tunggal premium dengan khasiat tinggi.",
+    manfaat: "Menurunkan kolesterol, menjaga kesehatan jantung dan imunitas.",
+    ukuran: "60 mL",
+    harga: "Rp 35.000",
+    hargaNum: 35000,
+  },
+];
+
+// ── HELPER ──
+function formatNum(n) {
+  return Number(n).toLocaleString("id-ID");
+}
+
+// ── RENDER PRODUK ──
+function renderProduk(data) {
+  const grid = document.getElementById("productsGrid");
+  grid.innerHTML = "";
+
+  data.forEach((p, i) => {
+    // Cari index asli di array produk (penting saat filter aktif)
+    const realIndex = produk.indexOf(p);
+    const card = document.createElement("div");
+    card.className = "prod-card";
+
+    card.innerHTML = `
+      <div class="prod-img-wrap" style="background:${p.bgColor}22;">
+        <img src="${p.img}" alt="${p.nama}" style="width:100%;height:100%;object-fit:contain;">
+        ${p.badge ? `<div class="prod-badge">${p.badge}</div>` : ""}
+      </div>
+      <div class="prod-body">
+        <h3>${p.nama}</h3>
+        <p>${p.deskripsi}</p>
+        <div class="prod-sizes">
+          <span class="size-chip">${p.ukuran}</span>
+        </div>
+        <div class="prod-price">${p.harga}</div>
+        <div class="prod-actions">
+          <button class="prod-cart-add" onclick="quickAddCart(${realIndex}, event)">
+            <i class="fa-solid fa-basket-shopping"></i> + Keranjang
+          </button>
+          <button class="prod-view" onclick="openDetail(${realIndex})">
+            <i class="fa-solid fa-eye"></i> Lihat
+          </button>
+        </div>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
 // ── CART STATE ──
 let cart = [];
 
@@ -16,7 +211,6 @@ function addToCart(prodId, sizeName, sizeHarga, sizeHargaNum) {
       key,
       prodId,
       nama: p.nama,
-      emoji: p.emoji,
       bgColor: p.bgColor,
       size: sizeName,
       harga: sizeHarga,
@@ -63,10 +257,6 @@ function updateCartUI() {
   itemsEl.innerHTML = html;
   document.getElementById("cartTotal").textContent =
     totalHarga > 0 ? "Rp " + formatNum(totalHarga) : "—";
-}
-
-function formatNum(n) {
-  return n.toLocaleString("id-ID");
 }
 
 function changeCartQty(idx, delta) {
@@ -133,12 +323,11 @@ function showCartToast() {
   }, 2000);
 }
 
+// FIX: kirim hargaNum (number), bukan string harga
 function quickAddCart(index, e) {
   e.stopPropagation();
-
   const p = produk[index];
-
-  addToCart(index, p.ukuran, "Rp " + formatNum(p.harga), p.harga);
+  addToCart(index, p.ukuran, p.harga, p.hargaNum);
 }
 
 function filterProd(kat, btn) {
@@ -155,47 +344,37 @@ renderProduk(produk);
 
 // ── MODAL ──
 let currentProd = null;
+let currentProdIdx = null; // FIX: simpan index produk yang sedang dibuka
 let modalQty = 1;
-let selectedSizeIdx = 0;
 
-function openModal(p) {
-  currentProd = p;
+function updateModalTotal() {
+  if (!currentProd) return;
+  const total = currentProd.hargaNum * modalQty;
+  document.getElementById("modalQtyVal").textContent = modalQty;
+  document.getElementById("modalQtyTotal").textContent =
+    total > 0 ? "Rp " + formatNum(total) : "—";
+}
+
+function openDetail(i) {
+  currentProd = produk[i];
+  currentProdIdx = i;
   modalQty = 1;
-  selectedSizeIdx = p.ukuran.findIndex((u) => u.harga) || 0;
-  if (selectedSizeIdx < 0) selectedSizeIdx = 0;
 
-  document.getElementById("mImg").style.background = p.bgColor + "33";
+  document.getElementById("mImg").style.background = currentProd.bgColor + "33";
   document.getElementById("mImg").innerHTML =
-    `<span style="font-size:5rem;">${p.emoji}</span>`;
-  document.getElementById("mName").textContent = p.nama;
-  document.getElementById("mManfaat").textContent = p.manfaat;
-  document.getElementById("modalQtyVal").textContent = 1;
+    `<img src="${currentProd.img}" style="max-height:180px;object-fit:contain">`;
+  document.getElementById("mName").textContent = currentProd.nama;
+  document.getElementById("mManfaat").textContent = currentProd.manfaat;
 
-  const szEl = document.getElementById("mSizes");
-  szEl.innerHTML = p.ukuran
-    .map(
-      (u, i) => `
-    <div class="modal-size ${i === selectedSizeIdx ? "selected" : ""}" onclick="selectSize(${i})">
-      <strong>${u.size}</strong>
-      <span>${u.harga || "Hubungi"}</span>
-    </div>`,
-    )
-    .join("");
+  updateModalTotal();
 
   document.getElementById("modal").classList.add("open");
   document.body.style.overflow = "hidden";
 }
 
-function selectSize(idx) {
-  selectedSizeIdx = idx;
-  document.querySelectorAll(".modal-size").forEach((el, i) => {
-    el.classList.toggle("selected", i === idx);
-  });
-}
-
 function changeModalQty(delta) {
   modalQty = Math.max(1, modalQty + delta);
-  document.getElementById("modalQtyVal").textContent = modalQty;
+  updateModalTotal();
 }
 
 function closeModal() {
@@ -206,16 +385,11 @@ function closeModalOutside(e) {
   if (e.target === document.getElementById("modal")) closeModal();
 }
 
-function getSelectedSize() {
-  if (!currentProd) return null;
-  return currentProd.ukuran[selectedSizeIdx] || currentProd.ukuran[0];
-}
-
+// FIX: orderWA modal pakai currentProd langsung (bukan sz.size / sz.harga)
 function orderWA() {
   if (!currentProd) return;
-  const sz = getSelectedSize();
-  let txt = `Halo Dapoer Niswah 🌿\n\nSaya ingin memesan:\n• ${currentProd.nama} (${sz.size}) x${modalQty}`;
-  if (sz.harga) txt += ` — ${sz.harga}`;
+  let txt = `Halo Dapoer Niswah 🌿\n\nSaya ingin memesan:\n• ${currentProd.nama} (${currentProd.ukuran}) x${modalQty}`;
+  if (currentProd.harga) txt += ` — ${currentProd.harga}`;
   txt += "\n\nMohon info ketersediaan dan pengiriman. Terima kasih!";
   window.open(
     "https://wa.me/6285312345678?text=" + encodeURIComponent(txt),
@@ -231,11 +405,16 @@ function orderShopee() {
   window.open("https://shopee.co.id/", "_blank");
 }
 
+// FIX: pakai currentProdIdx bukan currentProd.id yang tidak ada
 function addFromModal() {
-  if (!currentProd) return;
-  const sz = getSelectedSize();
+  if (!currentProd || currentProdIdx === null) return;
   for (let i = 0; i < modalQty; i++) {
-    addToCart(currentProd.id, sz.size, sz.harga, sz.hargaNum || 0);
+    addToCart(
+      currentProdIdx,
+      currentProd.ukuran,
+      currentProd.harga,
+      currentProd.hargaNum,
+    );
   }
   closeModal();
   openCart();
