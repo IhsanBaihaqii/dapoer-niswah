@@ -3,7 +3,7 @@ const produk = [
     nama: "Induk Kunyit Jahe Merah (60 mL)",
     img: "assets/img/produk/induk-kunyit-jahe-merah.png",
     kategori: "stamina",
-    badge: "Terlaris",
+    badge: null,
     bgColor: "#F5C518",
     deskripsi: "Meningkatkan daya tahan tubuh, stamina dan kinerja otak.",
     manfaat: "Meningkatkan daya tahan tubuh, stamina, dan kinerja otak.",
@@ -11,12 +11,11 @@ const produk = [
     harga: "Rp 8.000",
     hargaNum: 8000,
   },
-
   {
     nama: "Induk Kunyit Jahe Merah (250 mL)",
     img: "assets/img/produk/induk-kunyit-jahe-merah.png",
     kategori: "stamina",
-    badge: "Favorit",
+    badge: "Terlaris",
     bgColor: "#F5C518",
     deskripsi:
       "Kombinasi dahsyat kunyit induk dan jahe merah pilihan untuk vitalitas optimal.",
@@ -25,7 +24,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Induk Kunyit Jahe Merah (500 mL)",
     img: "assets/img/produk/induk-kunyit-jahe-merah.png",
@@ -39,7 +37,6 @@ const produk = [
     harga: "Rp 50.000",
     hargaNum: 50000,
   },
-
   {
     nama: "Jamu Bersalin",
     img: "assets/img/produk/jamu-bersalin.png",
@@ -54,7 +51,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Beras Kencur",
     img: "assets/img/produk/beras-kencur.png",
@@ -67,7 +63,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Pati Kunyit",
     img: "assets/img/produk/pati-kunyit.png",
@@ -80,7 +75,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Kunir Singset",
     img: "assets/img/produk/kunir-singset.png",
@@ -93,7 +87,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Temulawak",
     img: "assets/img/produk/temulawak.png",
@@ -107,7 +100,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Jamu Bersalin",
     img: "assets/img/produk/jamu-bersalin.png",
@@ -120,7 +112,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Jamu Rimpang",
     img: "assets/img/produk/jamu-rimpang.png",
@@ -133,7 +124,6 @@ const produk = [
     harga: "Rp 30.000",
     hargaNum: 30000,
   },
-
   {
     nama: "Jamu Celup",
     img: "assets/img/produk/jamu-celup.png",
@@ -146,7 +136,6 @@ const produk = [
     harga: "Rp 35.000",
     hargaNum: 35000,
   },
-
   {
     nama: "Bawang Putih Tunggal",
     img: "assets/img/produk/bawang-putih-tunggal.png",
@@ -161,12 +150,24 @@ const produk = [
   },
 ];
 
+// ── HELPER ──
+function formatNum(n) {
+  return Number(n).toLocaleString("id-ID");
+}
+
 // ── RENDER PRODUK ──
 function renderProduk(data) {
   const grid = document.getElementById("productsGrid");
   grid.innerHTML = "";
 
+  // mengurutkan sesuai abjad nama
+  data.sort((a, b) => {
+    return a.nama.localeCompare(b.nama);
+  });
+
   data.forEach((p, i) => {
+    // Cari index asli di array produk (penting saat filter aktif)
+    const realIndex = produk.indexOf(p);
     const card = document.createElement("div");
     card.className = "prod-card";
 
@@ -175,28 +176,20 @@ function renderProduk(data) {
         <img src="${p.img}" alt="${p.nama}" style="width:100%;height:100%;object-fit:contain;">
         ${p.badge ? `<div class="prod-badge">${p.badge}</div>` : ""}
       </div>
-
       <div class="prod-body">
         <h3>${p.nama}</h3>
         <p>${p.deskripsi}</p>
-
         <div class="prod-sizes">
           <span class="size-chip">${p.ukuran}</span>
         </div>
-
-        <div class="prod-price">
-          ${formatNum(p.harga)}
-        </div>
-
+        <div class="prod-price">${p.harga}</div>
         <div class="prod-actions">
-          <button class="prod-cart-add" onclick="quickAddCart(${i},event)">
+          <button class="prod-cart-add" onclick="quickAddCart(${realIndex}, event)">
             <i class="fa-solid fa-basket-shopping"></i> + Keranjang
           </button>
-
-          <button class="prod-view" onclick="openDetail(${i})">
+          <button class="prod-view" onclick="openDetail(${realIndex})">
             <i class="fa-solid fa-eye"></i> Lihat
           </button>
-
         </div>
       </div>
     `;
