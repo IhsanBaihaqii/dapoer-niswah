@@ -76,8 +76,8 @@ const produk = [
     hargaNum: 30000,
   },
   {
-    nama: "Kunir Singset",
-    img: "assets/img/produk/kunir-singset.png",
+    nama: "Jamu Celup Kunir Singset",
+    img: "assets/img/produk/jamu-celup-kunir-singset.png",
     kategori: "wanita",
     badge: "Populer",
     bgColor: "#E8621A",
@@ -125,8 +125,8 @@ const produk = [
     hargaNum: 30000,
   },
   {
-    nama: "Jamu Celup",
-    img: "assets/img/produk/jamu-celup.png",
+    nama: "Jamu Celup Induk Kunyit Jahe Merah",
+    img: "assets/img/produk/jamu-celup-induk-kunyit-jahe-merah.png",
     kategori: "khusus",
     badge: "Praktis",
     bgColor: "#E8621A",
