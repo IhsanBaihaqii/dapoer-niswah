@@ -203,7 +203,10 @@ function orderWA() {
 }
 
 function orderGofood() {
-  window.open("https://gofood.co.id/", "_blank");
+  window.open(
+    "https://gofood.co.id/medan/restaurant/jamu-dapoer-niswah-marelan-b76cebd0-0d2f-43d0-a1ea-a62df73fb6b6",
+    "_blank",
+  );
 }
 
 function orderShopee() {
