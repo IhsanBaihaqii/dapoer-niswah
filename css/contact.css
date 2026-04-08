@@ -34,12 +34,12 @@
   font-size: 1.1rem;
   flex-shrink: 0;
 }
-.contact-detail a {
+.contact-detail {
   color: var(--coklat);
   text-decoration: none;
   font-weight: 700;
 }
-.contact-detail a:hover {
+.contact-detail:hover {
   color: var(--orange);
 }
 .contact-detail small {
