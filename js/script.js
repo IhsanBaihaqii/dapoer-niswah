@@ -98,7 +98,7 @@ function checkoutWA() {
     alert("Keranjang masih kosong!");
     return;
   }
-  let txt = "Halo Dapoer Niswah 🌿\n\nSaya ingin memesan:\n";
+  let txt = "Halo Dapoer Niswah \n\nSaya ingin memesan:\n";
   cart.forEach((i) => {
     txt += `• ${i.nama} (${i.size}) x${i.qty} = ${i.hargaNum > 0 ? "Rp " + formatNum(i.hargaNum * i.qty) : "Hubungi"}\n`;
   });
@@ -253,7 +253,7 @@ function sendWA() {
     alert("Mohon isi nama Anda.");
     return;
   }
-  const text = `Halo Dapoer Niswah 🌿\n\nNama: ${nama}\nWA: ${wa}\nProduk: ${prod || "-"}\nPesan: ${msg || "-"}`;
+  const text = `Halo Dapoer Niswah \n\nNama: ${nama}\nWA: ${wa}\nProduk: ${prod || "-"}\nPesan: ${msg || "-"}`;
   window.open(
     "https://wa.me/6285370473784?text=" + encodeURIComponent(text),
     "_blank",
