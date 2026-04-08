@@ -106,7 +106,7 @@ function checkoutWA() {
   if (total > 0) txt += `\nTotal: Rp ${formatNum(total)}`;
   txt += "\n\nMohon konfirmasi ketersediaan & pengiriman. Terima kasih!";
   window.open(
-    "https://wa.me/6285312345678?text=" + encodeURIComponent(txt),
+    "https://wa.me/6285370473784?text=" + encodeURIComponent(txt),
     "_blank",
   );
 }
@@ -197,7 +197,7 @@ function orderWA() {
   if (currentProd.harga) txt += ` — ${currentProd.harga}`;
   txt += "\n\nMohon info ketersediaan dan pengiriman. Terima kasih!";
   window.open(
-    "https://wa.me/6285312345678?text=" + encodeURIComponent(txt),
+    "https://wa.me/6285370473784?text=" + encodeURIComponent(txt),
     "_blank",
   );
 }
@@ -249,7 +249,7 @@ function sendWA() {
   }
   const text = `Halo Dapoer Niswah 🌿\n\nNama: ${nama}\nWA: ${wa}\nProduk: ${prod || "-"}\nPesan: ${msg || "-"}`;
   window.open(
-    "https://wa.me/6285312345678?text=" + encodeURIComponent(text),
+    "https://wa.me/6285370473784?text=" + encodeURIComponent(text),
     "_blank",
   );
 }
