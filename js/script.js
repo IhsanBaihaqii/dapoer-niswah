@@ -210,7 +210,10 @@ function orderGofood() {
 }
 
 function orderShopee() {
-  window.open("https://shopee.co.id/", "_blank");
+  window.open(
+    "https://shopee.co.id/JAMU-NISWAH.-JAMU-TRADISIONAL-DAPOER-NISWAH.-JAMU-DAPUR-NISWAH-i.20893943.24465105695",
+    "_blank",
+  );
 }
 
 // FIX: pakai currentProdIdx bukan currentProd.id yang tidak ada
