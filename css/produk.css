@@ -45,16 +45,16 @@
   background: var(--putih);
   border-radius: 20px;
   border: 1px solid rgba(245, 197, 24, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+  box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.411);
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
 }
 .prod-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-3px);
   border-color: var(--kuning);
-  box-shadow: 0 20px 40px rgba(245, 197, 24, 0.15);
+  box-shadow: 0 0 3px rgba(245, 197, 24, 0.15);
   background: var(--kuning-pale);
 }
 .prod-img-wrap {
