@@ -303,6 +303,10 @@
   transition: all 0.2s;
 }
 
+.product-actions i {
+  font-size: 11px;
+}
+
 .btn-cart-chat:hover {
   background: var(--kuning-deep);
 }
