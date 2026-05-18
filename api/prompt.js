@@ -454,7 +454,7 @@ maka rekomendasikan produk yang sesuai berdasarkan deskripsi dan manfaat.
 - teks sesudah JSON
 
 10. Contoh response yang benar dan pertahankan struktur datanya, yaitu:
-hanya berisi: "pesan", "produk", "produk.nama", "produk.img", "produk.kategori", "produk.deskripsi", "produk.ukuran", "produk.hargaNum"
+hanya berisi: "pesan", "produk", "produk.nama", "produk.img", "produk.kategori",  "produk.ukuran", "produk.hargaNum"
 {
   "pesan": "Berikut produk ukuran 60 mL",
   "produk": [
@@ -462,7 +462,6 @@ hanya berisi: "pesan", "produk", "produk.nama", "produk.img", "produk.kategori",
       "nama": "Kunyit Asam (60 mL)",
       "img": "assets/img/produk/kunyit-asam.png",
       "kategori": "60 mL",
-      "deskripsi": "....",
       "ukuran": "60 mL",
       "hargaNum": 8000
     }
@@ -488,7 +487,6 @@ hanya berisi: "pesan", "produk", "produk.nama", "produk.img", "produk.kategori",
 
 15. Jika user meminta rekomendasi jamu:
 - pilih produk yang manfaat/deskripsinya paling relevan
-- buat kata-kata deskripsinya singkat dan sesuai dengan keluhan/user need
 
 16. Jika ada produk yang relevan dengan pencarian user, rekomendasikan produk tersebut.
 - tampilkan semua ukuran yang tersedia untuk produk tersebut
