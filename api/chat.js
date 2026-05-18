@@ -3,13 +3,18 @@ const axios = require("axios");
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
-  const text = req.query.text;
-
   try {
+    const text = req.query.text || "Halo AI";
+
     const response = await axios.post(
       "https://feelbetterbot.com/",
       {
-        text,
+        messages: [
+          {
+            role: "user",
+            content: text,
+          },
+        ],
       },
       {
         headers: {
@@ -17,6 +22,7 @@ module.exports = async (req, res) => {
           "content-type": "application/json",
           origin: "https://feelbetterbot.com",
           referer: "https://feelbetterbot.com/",
+          "user-agent": "Mozilla/5.0",
         },
       },
     );
@@ -25,6 +31,7 @@ module.exports = async (req, res) => {
   } catch (err) {
     res.status(500).json({
       error: err.message,
+      response: err.response?.data,
     });
   }
 };
