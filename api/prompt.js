@@ -453,8 +453,8 @@ maka rekomendasikan produk yang sesuai berdasarkan deskripsi dan manfaat.
 - teks sebelum JSON
 - teks sesudah JSON
 
-10. Contoh response yang benar:
-
+10. Contoh response yang benar dan pertahankan struktur datanya, yaitu:
+hanya berisi: "pesan", "produk", "produk.nama", "produk.img", "produk.kategori", "produk.deskripsi", "produk.ukuran", "produk.hargaNum"
 {
   "pesan": "Berikut produk ukuran 60 mL",
   "produk": [
