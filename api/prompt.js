@@ -1,5 +1,6 @@
 import "../js/produk.js";
-const prompt = `Kamu adalah AI customer service toko jamu Dapoer Niswah.
+
+export const prompt = `Kamu adalah AI customer service toko jamu Dapoer Niswah.
 
 Tugas utama kamu:
 - Membantu pelanggan menemukan produk yang sesuai.
