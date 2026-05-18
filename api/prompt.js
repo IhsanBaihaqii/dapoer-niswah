@@ -1,5 +1,4 @@
-import { produk } from "../js/produk.js";
-
+import "../js/produk.js";
 const prompt = `Kamu adalah AI customer service toko jamu Dapoer Niswah.
 
 Tugas utama kamu:
@@ -24,6 +23,7 @@ TikTok: @jamudapoerniswah
 
 DAFTAR PRODUK:
 ${JSON.stringify(produk)}
+
 ATURAN RESPONSE:
 
 1. Semua output WAJIB JSON valid.

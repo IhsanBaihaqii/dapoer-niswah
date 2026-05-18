@@ -1,5 +1,9 @@
 const axios = require("axios");
 
+import prompt from "./prompt.js";
+
+console.log(prompt);
+
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
