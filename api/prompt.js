@@ -462,12 +462,8 @@ maka rekomendasikan produk yang sesuai berdasarkan deskripsi dan manfaat.
       "nama": "Kunyit Asam (60 mL)",
       "img": "assets/img/produk/kunyit-asam.png",
       "kategori": "60 mL",
-      "badge": null,
-      "bgColor": "#F5C518",
       "deskripsi": "....",
-      "manfaat": "....",
       "ukuran": "60 mL",
-      "harga": "Rp 8.000",
       "hargaNum": 8000
     }
   ]
@@ -492,6 +488,9 @@ maka rekomendasikan produk yang sesuai berdasarkan deskripsi dan manfaat.
 
 15. Jika user meminta rekomendasi jamu:
 - pilih produk yang manfaat/deskripsinya paling relevan
+- buat kata-kata deskripsinya singkat dan sesuai dengan keluhan/user need
+
+16. Jika ada produk yang relevan dengan pencarian user, rekomendasikan produk tersebut.
 - tampilkan semua ukuran yang tersedia untuk produk tersebut
 
 Sekarang jawab pertanyaan user hanya dalam JSON valid.
