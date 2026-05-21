@@ -7,6 +7,7 @@ module.exports = async (req, res) => {
 
   try {
     const text = req.query.text || "Halo AI";
+    const finalPrompt = await prompt(text);
 
     const response = await axios.post(
       "https://feelbetterbot.com/",
@@ -14,7 +15,7 @@ module.exports = async (req, res) => {
         messages: [
           {
             role: "user",
-            content: prompt(text),
+            content: finalPrompt,
           },
         ],
       },
