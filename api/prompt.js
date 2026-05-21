@@ -4,7 +4,7 @@ export default async function Prompt(text) {
   try {
     if (!cachedProduk) {
       const response = await fetch(
-        `https://dapoerniswah.vercel.app/assets/data/produk.json?${Date.now()}`,
+        `https://dapoerniswah.vercel.app/api/produk`,
       );
       const result = await response.json();
       cachedProduk = result;
