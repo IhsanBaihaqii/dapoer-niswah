@@ -158,23 +158,6 @@ function updateModalTotal() {
     total > 0 ? "Rp " + formatNum(total) : "—";
 }
 
-function openDetail(i) {
-  currentProd = produk[i];
-  currentProdIdx = i;
-  modalQty = 1;
-
-  document.getElementById("mImg").style.background = currentProd.bgColor + "33";
-  document.getElementById("mImg").innerHTML =
-    `<img src="${currentProd.img}" style="max-height:180px;object-fit:contain">`;
-  document.getElementById("mName").textContent = currentProd.nama;
-  document.getElementById("mManfaat").textContent = currentProd.manfaat;
-
-  updateModalTotal();
-
-  document.getElementById("modal").classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
 function changeModalQty(delta) {
   modalQty = Math.max(1, modalQty + delta);
   updateModalTotal();

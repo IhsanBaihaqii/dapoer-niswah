@@ -47,7 +47,7 @@ function renderProduk(data) {
       </div>
       <div class="prod-body">
         <h3>${p.nama}</h3>
-        <p>${p.deskripsi}</p>
+        <p>${p.manfaat}</p>
         <div class="prod-sizes">
           <span class="size-chip">${p.ukuran}</span>
         </div>
@@ -65,6 +65,24 @@ function renderProduk(data) {
 
     grid.appendChild(card);
   });
+}
+
+function openDetail(i) {
+  currentProd = produk[i];
+  currentProdIdx = i;
+  modalQty = 1;
+
+  document.getElementById("mImg").style.background = currentProd.bgColor + "33";
+  document.getElementById("mImg").innerHTML =
+    `<img src="${currentProd.img}" style="max-height:180px;object-fit:contain">`;
+  document.getElementById("mName").textContent = currentProd.nama;
+  document.getElementById("mManfaat").textContent =
+    "KOMPOSISI: " + currentProd.komposisi;
+
+  updateModalTotal();
+
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
 async function init() {
