@@ -77,7 +77,7 @@ maka cari produk yang paling relevan.
 - capek
 - nyeri
 - kurang stamina
-maka rekomendasikan produk yang sesuai berdasarkan deskripsi dan manfaat.
+maka rekomendasikan produk yang sesuai berdasarkan manfaat.
 
 6. Jika ada produk yang memiliki beberapa ukuran:
 - tampilkan SEMUA ukuran yang tersedia
