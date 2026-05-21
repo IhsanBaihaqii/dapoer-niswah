@@ -119,7 +119,7 @@ function renderMultipleProducts(productsList, title) {
           </div>
 
           <div class="product-price">
-            ${product.harga || ""}
+            ${product.hargaNum !== undefined ? formatNum(product.hargaNum) : ""}
           </div>
 
           <div class="product-actions">
@@ -178,7 +178,7 @@ function renderSingleProduct(product) {
 
       <div class="product-info">
         <div class="product-price">
-          ${product.harga || ""}
+          ${product.hargaNum !== undefined ? formatNum(product.hargaNum) : ""}
         </div>
 
         <div class="product-actions">
