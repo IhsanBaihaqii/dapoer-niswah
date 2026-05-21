@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      jamu: { total: data.length, data },
+      jamu: { total: data.length, ...data },
     });
   } catch (err) {
     res.status(500).json({
