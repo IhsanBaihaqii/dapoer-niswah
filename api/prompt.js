@@ -1,10 +1,16 @@
 // fetch produk
-
-export default function Prompt(text) {
-  fetch("/api/produk")
-    .then((response) => response.json())
-    .then((data) => {
-      return `Kamu adalah AI customer service toko jamu Dapoer Niswah.
+let cachedProduk = null;
+export default async function Prompt(text) {
+  try {
+    if (!cachedProduk) {
+      const response = await fetch(
+        `https://dapoerniswah.vercel.app/assets/data/produk.json?${Date.now()}`,
+      );
+      const result = await response.json();
+      cachedProduk = result;
+      console.log("Produk loaded and cached:", cachedProduk);
+    }
+    return `Kamu adalah AI customer service toko jamu Dapoer Niswah.
 
 Tugas utama kamu:
 - Membantu pelanggan menemukan produk yang sesuai.
@@ -33,7 +39,7 @@ WhatsApp: 0853-7047-3784
 TikTok: @jamudapoerniswah
 
 DAFTAR PRODUK:
-${JSON.stringify(data)}
+
 
 ATURAN RESPONSE:
 
@@ -137,5 +143,12 @@ Sekarang jawab pertanyaan user hanya dalam JSON valid tanpa kesalahan.
 Pertanyaan user:
 ${text}
 `;
-    });
+  } catch (error) {
+    console.error(error);
+
+    return `
+Pertanyaan user:
+${text}
+`;
+  }
 }
