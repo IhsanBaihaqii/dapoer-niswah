@@ -145,8 +145,6 @@ function filterProd(kat, btn) {
   );
 }
 
-renderProduk(produk);
-
 // ── MODAL ──
 let currentProd = null;
 let currentProdIdx = null; // FIX: simpan index produk yang sedang dibuka

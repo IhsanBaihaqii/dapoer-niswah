@@ -1,0 +1,91 @@
+[
+  {
+    "nama": "Induk Kunyit Jahe Merah (1 Liter)",
+    "img": "assets/img/produk/induk-kunyit-jahe-merah.png",
+    "kategori": "1 L",
+    "badge": "Terlaris",
+    "bgColor": "#D4A017",
+    "deskripsi": "Induk kunyit jahe merah adalah ramuan herbal tradisional yang terbuat dari kombinasi kunyit, jahe, dan rempah lainnya. jamu ini bermanfaat untuk meningkatkan stamina, meredakan nyeri, dan mendukung sistem kekebalan tubuh.",
+    "manfaat": "Induk kunyit jahe merah adalah ramuan herbal tradisional yang terbuat dari kombinasi kunyit, jahe, dan rempah lainnya. jamu ini bermanfaat untuk meningkatkan stamina, meredakan nyeri, dan mendukung sistem kekebalan tubuh.",
+    "ukuran": "1 Liter",
+    "hargaNum": 90000
+  },
+  {
+    "nama": "Kunyit Asam (1 Liter)",
+    "img": "assets/img/produk/kunyit-asam.png",
+    "kategori": "1 Liter",
+    "badge": null,
+    "bgColor": "#F5C518",
+    "deskripsi": "Jamu kunyit asam adalah minuman herbal tradisional yang terbuat dari campuran kunyit dan asam jawa. jamu ini bermanfaat untuk meredakan nyeri haid, menjaga kesehatan kulit, membantu detoksifikasi, serta meningkatkan sistem imun.",
+    "manfaat": "Jamu kunyit asam adalah minuman herbal tradisional yang terbuat dari campuran kunyit dan asam jawa. jamu ini bermanfaat untuk meredakan nyeri haid, menjaga kesehatan kulit, membantu detoksifikasi, serta meningkatkan sistem imun.",
+    "ukuran": "1 Liter",
+    "hargaNum": 90000
+  },
+  {
+    "nama": "Manjakani Beras Kencur (1 Liter)",
+    "img": "assets/img/produk/beras-kencur.png",
+    "kategori": "1 Liter",
+    "badge": null,
+    "bgColor": "#D4A017",
+    "deskripsi": "Jamu beras kencur adalah minuman tradisional yang dibuat dari beras dan rimpang kencur, dikenal karena rasanya yang manis dan segar. jamu ini berkhasiat meningkatkan stamina, meredakan kelelahan, membantu pencernaan, serta mengurangi nyeri dan pegal.",
+    "manfaat": "Jamu beras kencur adalah minuman tradisional yang dibuat dari beras dan rimpang kencur, dikenal karena rasanya yang manis dan segar. jamu ini berkhasiat meningkatkan stamina, meredakan kelelahan, membantu pencernaan, serta mengurangi nyeri dan pegal.",
+    "ukuran": "1 Liter",
+    "hargaNum": 90000
+  },
+  {
+    "nama": "Jamu Pati Kunyit (1 Liter)",
+    "img": "assets/img/produk/pati-kunyit.png",
+    "kategori": "1 Liter",
+    "badge": null,
+    "bgColor": "#D4A017",
+    "deskripsi": "Jamu pati kunyit adalah minuman herbal yang terbuat dari ekstrak kunyit murni, kaya akan kurkumin dengan sifat anti-inflamasi dan antioksidan. jamu ini bermanfaat untuk meredakan peradangan, meningkatkan kesehatan pencernaan, dan menjaga fungsi hati.",
+    "manfaat": "Jamu pati kunyit adalah minuman herbal yang terbuat dari ekstrak kunyit murni, kaya akan kurkumin dengan sifat anti-inflamasi dan antioksidan. jamu ini bermanfaat untuk meredakan peradangan, meningkatkan kesehatan pencernaan, dan menjaga fungsi hati.",
+    "ukuran": "1 Liter",
+    "hargaNum": 90000
+  },
+  {
+    "nama": "Jamu Temulawak (1 Liter)",
+    "img": "assets/img/produk/temulawak.png",
+    "kategori": "1 Liter",
+    "badge": null,
+    "bgColor": "#D4A017",
+    "deskripsi": "Jamu temulawak adalah minuman herbal tradisional yang terbuat dari rimpang temulawak (curcuma xanthorrhiza). jamu ini dikenal efektif untuk meningkatkan fungsi hati, melancarkan pencernaan, meredakan peradangan, serta meningkatkan stamina tubuh.",
+    "manfaat": "Jamu temulawak adalah minuman herbal tradisional yang terbuat dari rimpang temulawak (curcuma xanthorrhiza). jamu ini dikenal efektif untuk meningkatkan fungsi hati, melancarkan pencernaan, meredakan peradangan, serta meningkatkan stamina tubuh.",
+    "ukuran": "1 Liter",
+    "hargaNum": 90000
+  },
+  {
+    "nama": "Jamu Bersalin (1 Liter)",
+    "img": "assets/img/produk/jamu-bersalin.png",
+    "kategori": "1 Liter",
+    "badge": null,
+    "bgColor": "#A0622A",
+    "deskripsi": "Jamu bersalin adalah ramuan herbal tradisional yang dirancang untuk membantu pemulihan wanita pasca-melahirkan. terbuat dari bahan alami seperti kunyit, kencur, dan rempah lainnya, jamu ini bermanfaat untuk mempercepat penyembuhan.",
+    "manfaat": "Jamu bersalin adalah ramuan herbal tradisional yang dirancang untuk membantu pemulihan wanita pasca-melahirkan. terbuat dari bahan alami seperti kunyit, kencur, dan rempah lainnya, jamu ini bermanfaat untuk mempercepat penyembuhan.",
+    "ukuran": "1 Liter",
+    "hargaNum": 90000
+  },
+
+  {
+    "nama": "Jamu Bawang Putih Tunggal (60 mL)",
+    "img": "assets/img/produk/bawang-putih-tunggal-60ml.png",
+    "kategori": "60 mL",
+    "badge": null,
+    "bgColor": "#A0622A",
+    "deskripsi": "Jamu bawang putih tunggal adalah minuman herbal yang terbuat dari ekstrak bawang putih tunggal, dikenal karena khasiatnya dalam meningkatkan sistem kekebalan tubuh, meredakan peradangan, serta membantu menurunkan tekanan darah dan kadar kolesterol.",
+    "manfaat": "Jamu bawang putih tunggal adalah minuman herbal yang terbuat dari ekstrak bawang putih tunggal, dikenal karena khasiatnya dalam meningkatkan sistem kekebalan tubuh, meredakan peradangan, serta membantu menurunkan tekanan darah dan kadar kolesterol.",
+    "ukuran": "60 mL",
+    "hargaNum": 45000
+  },
+  {
+    "nama": "Jamu Bawang Putih Tunggal (250 mL)",
+    "img": "assets/img/produk/bawang-putih-tunggal.png",
+    "kategori": "250 mL",
+    "badge": null,
+    "bgColor": "#A0622A",
+    "deskripsi": "Jamu bawang putih tunggal adalah minuman herbal yang terbuat dari ekstrak bawang putih tunggal, dikenal karena khasiatnya dalam meningkatkan sistem kekebalan tubuh, meredakan peradangan, serta membantu menurunkan tekanan darah dan kadar kolesterol.",
+    "manfaat": "Jamu bawang putih tunggal adalah minuman herbal yang terbuat dari ekstrak bawang putih tunggal, dikenal karena khasiatnya dalam meningkatkan sistem kekebalan tubuh, meredakan peradangan, serta membantu menurunkan tekanan darah dan kadar kolesterol.",
+    "ukuran": "250 mL",
+    "hargaNum": 90000
+  }
+]
