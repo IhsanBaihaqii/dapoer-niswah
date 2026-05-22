@@ -337,7 +337,7 @@ function addUnread() {
 
 //  GLOBAL CART
 window.addToCartFromChat = function (productIndex) {
-  console.log("Adding to cart from chat:", p);
+  console.log(window.addToCart);
   if (typeof window.addToCart === "function" && products[productIndex]) {
     const p = products[productIndex];
     window.addToCart(productIndex, p.ukuran, p.hargaNum);
