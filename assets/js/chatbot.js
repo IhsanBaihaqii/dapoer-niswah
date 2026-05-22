@@ -338,6 +338,8 @@ function addUnread() {
 //  GLOBAL CART
 window.addToCartFromChat = function (productIndex) {
   console.log(typeof window.addToCart);
+  console.log(products);
+  console.log(productIndex);
   console.log(products[productIndex]);
   if (typeof window.addToCart === "function" && products[productIndex]) {
     const p = products[productIndex];
