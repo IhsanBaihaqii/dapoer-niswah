@@ -1,4 +1,4 @@
-let produk = [];
+window.produk = [];
 async function loadProduk(ukuran) {
   try {
     const response = await fetch(`/assets/data/jamu/${ukuran}.json`);
@@ -36,7 +36,7 @@ function renderProduk(data) {
 
   data.forEach((p, i) => {
     // Cari index asli di array produk (penting saat filter aktif)
-    const realIndex = produk.indexOf(p);
+    const realIndex = window.produk.indexOf(p);
     const card = document.createElement("div");
     card.className = "prod-card";
 
@@ -68,7 +68,7 @@ function renderProduk(data) {
 }
 
 function openDetail(i) {
-  currentProd = produk[i];
+  currentProd = window.produk[i];
   currentProdIdx = i;
   modalQty = 1;
 
@@ -86,8 +86,8 @@ function openDetail(i) {
 }
 
 async function init() {
-  produk = await getAllProduk();
-  renderProduk(produk);
+  window.produk = await getAllProduk();
+  renderProduk(window.produk);
 }
 
 init();

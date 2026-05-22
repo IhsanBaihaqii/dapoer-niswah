@@ -11,7 +11,7 @@ let isTyping = false;
 let unreadCount = 0;
 
 // Get products from global
-const products = produk;
+const products = window.produk;
 
 //  AI RESPONSE PARSER
 function parseAIResponse(response) {
@@ -337,10 +337,6 @@ function addUnread() {
 
 //  GLOBAL CART
 window.addToCartFromChat = function (productIndex) {
-  console.log(typeof window.addToCart);
-  console.log(products);
-  console.log(productIndex);
-  console.log(products[productIndex]);
   if (typeof window.addToCart === "function" && products[productIndex]) {
     const p = products[productIndex];
     window.addToCart(productIndex, p.ukuran, p.hargaNum);
