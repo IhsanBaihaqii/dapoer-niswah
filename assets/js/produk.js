@@ -88,6 +88,7 @@ function openDetail(i) {
 async function init() {
   window.produk = await getAllProduk();
   renderProduk(window.produk);
+  window.loadChatBot();
 }
 
 init();

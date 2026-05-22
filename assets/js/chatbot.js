@@ -11,101 +11,102 @@ let isTyping = false;
 let unreadCount = 0;
 
 // Get products from global
-const products = window.produk;
+window.loadChatBot = function () {
+  const products = window.produk;
 
-//  AI RESPONSE PARSER
-function parseAIResponse(response) {
-  try {
-    // jika sudah object
-    if (typeof response === "object") {
-      return response;
-    }
-
-    // convert ke string
-    let text = String(response).trim();
-
-    // hapus markdown AI
-    text = text
-      .replace(/```json/gi, "")
-      .replace(/```/g, "")
-      .trim();
-
-    // coba parse normal
+  //  AI RESPONSE PARSER
+  function parseAIResponse(response) {
     try {
+      // jika sudah object
+      if (typeof response === "object") {
+        return response;
+      }
+
+      // convert ke string
+      let text = String(response).trim();
+
+      // hapus markdown AI
+      text = text
+        .replace(/```json/gi, "")
+        .replace(/```/g, "")
+        .trim();
+
+      // coba parse normal
+      try {
+        return JSON.parse(text);
+      } catch {}
+
+      // ambil object JSON pertama
+      const first = text.indexOf("{");
+      const last = text.lastIndexOf("}");
+
+      if (first !== -1 && last !== -1) {
+        text = text.slice(first, last + 1);
+      }
+
+      // fix escaped quotes
+      if (text.startsWith('"') && text.endsWith('"')) {
+        text = text.slice(1, -1);
+
+        text = text.replace(/\\"/g, '"');
+        text = text.replace(/\\\\/g, "\\");
+      }
+
       return JSON.parse(text);
-    } catch {}
+    } catch (err) {
+      console.error("JSON Parse Error:", err);
 
-    // ambil object JSON pertama
-    const first = text.indexOf("{");
-    const last = text.lastIndexOf("}");
-
-    if (first !== -1 && last !== -1) {
-      text = text.slice(first, last + 1);
-    }
-
-    // fix escaped quotes
-    if (text.startsWith('"') && text.endsWith('"')) {
-      text = text.slice(1, -1);
-
-      text = text.replace(/\\"/g, '"');
-      text = text.replace(/\\\\/g, "\\");
-    }
-
-    return JSON.parse(text);
-  } catch (err) {
-    console.error("JSON Parse Error:", err);
-
-    return {
-      error: true,
-      pesan: "Maaf kak, terjadi kesalahan saat memproses respon 🙏",
-      produk: false,
-    };
-  }
-}
-
-//  API REQUEST
-function getResponse(text) {
-  return fetch(
-    `https://dapoerniswah.vercel.app/api/chat?text=${encodeURIComponent(text)}`,
-  )
-    .then((res) => res.json())
-    .then(parseAIResponse)
-    .catch((err) => {
-      console.error("Fetch Error:", err);
       return {
         error: true,
-        pesan: "Maaf kak, terjadi kesalahan saat memproses respon AI 🙏",
+        pesan: "Maaf kak, terjadi kesalahan saat memproses respon 🙏",
         produk: false,
       };
-    });
-}
+    }
+  }
 
-//  HELPER
-function getBaseProductName(fullName) {
-  return fullName.replace(/\s*\([^)]*\)/, "").trim();
-}
+  //  API REQUEST
+  function getResponse(text) {
+    return fetch(
+      `https://dapoerniswah.vercel.app/api/chat?text=${encodeURIComponent(text)}`,
+    )
+      .then((res) => res.json())
+      .then(parseAIResponse)
+      .catch((err) => {
+        console.error("Fetch Error:", err);
+        return {
+          error: true,
+          pesan: "Maaf kak, terjadi kesalahan saat memproses respon AI 🙏",
+          produk: false,
+        };
+      });
+  }
 
-//  RENDER MULTIPLE PRODUCTS
-function renderMultipleProducts(productsList, title) {
-  const container = document.createElement("div");
-  container.className = "message bot";
+  //  HELPER
+  function getBaseProductName(fullName) {
+    return fullName.replace(/\s*\([^)]*\)/, "").trim();
+  }
 
-  const bubble = document.createElement("div");
-  bubble.className = "message-bubble";
+  //  RENDER MULTIPLE PRODUCTS
+  function renderMultipleProducts(productsList, title) {
+    const container = document.createElement("div");
+    container.className = "message bot";
 
-  let html = `<div><strong>${title}</strong></div>`;
+    const bubble = document.createElement("div");
+    bubble.className = "message-bubble";
 
-  html += `
+    let html = `<div><strong>${title}</strong></div>`;
+
+    html += `
     <div class="horizontal-products-container">
       <div class="products-scroll">
   `;
 
-  productsList.forEach((product) => {
-    const productIndex = products.findIndex((p) => p.nama === product.nama);
+    productsList.forEach((product) => {
+      const productIndex = products.findIndex((p) => p.nama === product.nama);
 
-    const escapedName = product.nama.replace(/'/g, "\\'");
+      const escapedName = product.nama.replace(/'/g, "\\'");
 
-    html += `
+      html += `
       <div class="product-card-chat">
         <img 
           src="${product.img || "assets/img/logo.png"}" 
@@ -141,30 +142,30 @@ function renderMultipleProducts(productsList, title) {
         </div>
       </div>
     `;
-  });
+    });
 
-  html += `
+    html += `
       </div>
     </div>
   `;
 
-  bubble.innerHTML = html;
+    bubble.innerHTML = html;
 
-  container.appendChild(bubble);
+    container.appendChild(bubble);
 
-  return container;
-}
+    return container;
+  }
 
-//  RENDER SINGLE PRODUCT
-function renderSingleProduct(product) {
-  const container = document.createElement("div");
-  container.className = "message bot";
-  const bubble = document.createElement("div");
-  bubble.className = "message-bubble";
-  const productIndex = products.findIndex((p) => p.nama === product.nama);
-  const escapedName = product.nama.replace(/'/g, "\\'");
+  //  RENDER SINGLE PRODUCT
+  function renderSingleProduct(product) {
+    const container = document.createElement("div");
+    container.className = "message bot";
+    const bubble = document.createElement("div");
+    bubble.className = "message-bubble";
+    const productIndex = products.findIndex((p) => p.nama === product.nama);
+    const escapedName = product.nama.replace(/'/g, "\\'");
 
-  bubble.innerHTML = `
+    bubble.innerHTML = `
     <div>
       <strong>${product.nama}</strong>
     </div>
@@ -201,164 +202,165 @@ function renderSingleProduct(product) {
     </div>
   `;
 
-  container.appendChild(bubble);
-  return container;
-}
+    container.appendChild(bubble);
+    return container;
+  }
 
-//  TEXT MESSAGE
-function addTextMessage(text, sender) {
-  const messageDiv = document.createElement("div");
-  messageDiv.className = `message ${sender}`;
-  const bubble = document.createElement("div");
-  bubble.className = "message-bubble";
-  bubble.innerHTML = text.replace(/\n/g, "<br>");
-  messageDiv.appendChild(bubble);
-  chatMessages.appendChild(messageDiv);
-  removeTypingIndicator();
-  scrollToBottom();
-}
+  //  TEXT MESSAGE
+  function addTextMessage(text, sender) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className = `message ${sender}`;
+    const bubble = document.createElement("div");
+    bubble.className = "message-bubble";
+    bubble.innerHTML = text.replace(/\n/g, "<br>");
+    messageDiv.appendChild(bubble);
+    chatMessages.appendChild(messageDiv);
+    removeTypingIndicator();
+    scrollToBottom();
+  }
 
-//  TYPING
-function addTypingIndicator() {
-  if (isTyping) return;
-  isTyping = true;
+  //  TYPING
+  function addTypingIndicator() {
+    if (isTyping) return;
+    isTyping = true;
 
-  const typingDiv = document.createElement("div");
+    const typingDiv = document.createElement("div");
 
-  typingDiv.className = "message bot";
-  typingDiv.id = "typingIndicator";
+    typingDiv.className = "message bot";
+    typingDiv.id = "typingIndicator";
 
-  typingDiv.innerHTML = `
+    typingDiv.innerHTML = `
     <div class="typing-indicator">
       <div class="typing-dot"></div>
       <div class="typing-dot"></div>
       <div class="typing-dot"></div>
     </div>
   `;
-  chatMessages.appendChild(typingDiv);
-  scrollToBottom();
-}
-
-function removeTypingIndicator() {
-  const typing = document.getElementById("typingIndicator");
-  if (typing) typing.remove();
-  isTyping = false;
-}
-
-//  SCROLL
-function scrollToBottom() {
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-//  PROCESS RESPONSE
-async function processResponse(userMessage) {
-  const query = userMessage.toLowerCase().trim();
-
-  // sapaan
-  if (query.match(/^(hai|halo|hi|hey)$/i)) {
-    addTextMessage("Halo kak 👋 Ada yang bisa kami bantu hari ini?", "bot");
-    return;
-  }
-
-  const response = await getResponse(query);
-
-  // error
-  if (response.error) {
-    addTextMessage(response.pesan, "bot");
-    return;
-  }
-
-  // hanya text
-  if (!response.produk || response.produk.length === 0) {
-    addTextMessage(response.pesan || "Tidak ada produk ditemukan", "bot");
-    return;
-  }
-
-  // produk banyak
-  if (response.produk.length > 1) {
-    const productContainer = renderMultipleProducts(
-      response.produk,
-      response.pesan || "Produk ditemukan",
-    );
-    chatMessages.appendChild(productContainer);
-    removeTypingIndicator();
-
+    chatMessages.appendChild(typingDiv);
     scrollToBottom();
-    return;
   }
 
-  // single product
-  const productContainer = renderSingleProduct(response.produk[0]);
-  chatMessages.appendChild(productContainer);
-  scrollToBottom();
-}
-
-//  SEND MESSAGE
-async function sendMessage() {
-  const message = chatInput.value.trim();
-  if (!message || isTyping) return;
-  chatInput.value = "";
-  addTextMessage(message, "user");
-  addTypingIndicator();
-  processResponse(message);
-  if (unreadCount > 0) {
-    unreadCount = 0;
-    chatBadge.style.display = "none";
+  function removeTypingIndicator() {
+    const typing = document.getElementById("typingIndicator");
+    if (typing) typing.remove();
+    isTyping = false;
   }
-}
 
-//  TOGGLE CHAT
-function toggleChat() {
-  isOpen = !isOpen;
+  //  SCROLL
+  function scrollToBottom() {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
 
-  if (isOpen) {
-    chatWindow.classList.add("open");
-    setTimeout(() => chatInput.focus(), 300);
-    unreadCount = 0;
-    chatBadge.style.display = "none";
-  } else {
+  //  PROCESS RESPONSE
+  async function processResponse(userMessage) {
+    const query = userMessage.toLowerCase().trim();
+
+    // sapaan
+    if (query.match(/^(hai|halo|hi|hey)$/i)) {
+      addTextMessage("Halo kak 👋 Ada yang bisa kami bantu hari ini?", "bot");
+      return;
+    }
+
+    const response = await getResponse(query);
+
+    // error
+    if (response.error) {
+      addTextMessage(response.pesan, "bot");
+      return;
+    }
+
+    // hanya text
+    if (!response.produk || response.produk.length === 0) {
+      addTextMessage(response.pesan || "Tidak ada produk ditemukan", "bot");
+      return;
+    }
+
+    // produk banyak
+    if (response.produk.length > 1) {
+      const productContainer = renderMultipleProducts(
+        response.produk,
+        response.pesan || "Produk ditemukan",
+      );
+      chatMessages.appendChild(productContainer);
+      removeTypingIndicator();
+
+      scrollToBottom();
+      return;
+    }
+
+    // single product
+    const productContainer = renderSingleProduct(response.produk[0]);
+    chatMessages.appendChild(productContainer);
+    scrollToBottom();
+  }
+
+  //  SEND MESSAGE
+  async function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message || isTyping) return;
+    chatInput.value = "";
+    addTextMessage(message, "user");
+    addTypingIndicator();
+    processResponse(message);
+    if (unreadCount > 0) {
+      unreadCount = 0;
+      chatBadge.style.display = "none";
+    }
+  }
+
+  //  TOGGLE CHAT
+  function toggleChat() {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      chatWindow.classList.add("open");
+      setTimeout(() => chatInput.focus(), 300);
+      unreadCount = 0;
+      chatBadge.style.display = "none";
+    } else {
+      chatWindow.classList.remove("open");
+    }
+  }
+
+  function closeChat() {
+    isOpen = false;
     chatWindow.classList.remove("open");
   }
-}
 
-function closeChat() {
-  isOpen = false;
-  chatWindow.classList.remove("open");
-}
-
-//  BADGE
-function addUnread() {
-  if (!isOpen) {
-    unreadCount++;
-    chatBadge.style.display = "flex";
-    chatBadge.textContent = unreadCount;
+  //  BADGE
+  function addUnread() {
+    if (!isOpen) {
+      unreadCount++;
+      chatBadge.style.display = "flex";
+      chatBadge.textContent = unreadCount;
+    }
   }
-}
 
-//  GLOBAL CART
-window.addToCartFromChat = function (productIndex) {
-  if (typeof window.addToCart === "function" && products[productIndex]) {
-    const p = products[productIndex];
-    window.addToCart(productIndex, p.ukuran, p.hargaNum);
+  //  GLOBAL CART
+  window.addToCartFromChat = function (productIndex) {
+    if (typeof window.addToCart === "function" && products[productIndex]) {
+      const p = products[productIndex];
+      window.addToCart(productIndex, p.ukuran, p.hargaNum);
 
-    addTextMessage(`✅ ${p.nama} berhasil ditambahkan ke keranjang`, "bot");
-  }
+      addTextMessage(`✅ ${p.nama} berhasil ditambahkan ke keranjang`, "bot");
+    }
+  };
+
+  //  EVENTS
+  toggleBtn.addEventListener("click", toggleChat);
+  closeBtn.addEventListener("click", closeChat);
+  sendBtn.addEventListener("click", sendMessage);
+
+  chatInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+
+      sendMessage();
+    }
+  });
+
+  //  INITIAL BADGE
+  setTimeout(() => {
+    if (!isOpen) addUnread();
+  }, 3000);
 };
-
-//  EVENTS
-toggleBtn.addEventListener("click", toggleChat);
-closeBtn.addEventListener("click", closeChat);
-sendBtn.addEventListener("click", sendMessage);
-
-chatInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-
-    sendMessage();
-  }
-});
-
-//  INITIAL BADGE
-setTimeout(() => {
-  if (!isOpen) addUnread();
-}, 3000);
