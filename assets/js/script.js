@@ -5,7 +5,7 @@ function cartKey(prodId, size) {
   return `${prodId}::${size}`;
 }
 
-function addToCart(prodId, sizeName, sizeHarga, sizeHargaNum) {
+function addToCart(prodId, sizeName, sizeHargaNum) {
   const key = cartKey(prodId, sizeName);
   const existing = cart.find((i) => i.key === key);
   if (existing) {
@@ -18,7 +18,6 @@ function addToCart(prodId, sizeName, sizeHarga, sizeHargaNum) {
       nama: p.nama,
       bgColor: p.bgColor,
       size: sizeName,
-      harga: sizeHarga,
       hargaNum: sizeHargaNum || 0,
       qty: 1,
     });
@@ -46,7 +45,7 @@ function updateCartUI() {
       </div>
       <div class="cart-item-info">
         <div class="cart-item-name">${item.nama}</div>
-        <div class="cart-item-size">${item.size} — ${item.harga || "Hubungi"}</div>
+        <div class="cart-item-size">${item.size} — ${item.hargaNum > 0 ? "Rp " + formatNum(item.hargaNum) : "Hubungi"}</div>
         <div class="cart-item-controls">
           <button class="qty-btn" onclick="changeCartQty(${idx},-1)">−</button>
           <span class="qty-val">${item.qty}</span>
@@ -132,7 +131,7 @@ function showCartToast() {
 function quickAddCart(index, e) {
   e.stopPropagation();
   const p = produk[index];
-  addToCart(index, p.ukuran, p.harga, p.hargaNum);
+  addToCart(index, p.ukuran, p.hargaNum);
 }
 
 function filterProd(kat, btn) {
@@ -201,12 +200,7 @@ function orderShopee() {
 function addFromModal() {
   if (!currentProd || currentProdIdx === null) return;
   for (let i = 0; i < modalQty; i++) {
-    addToCart(
-      currentProdIdx,
-      currentProd.ukuran,
-      currentProd.harga,
-      currentProd.hargaNum,
-    );
+    addToCart(currentProdIdx, currentProd.ukuran, currentProd.hargaNum);
   }
   closeModal();
   openCart();
