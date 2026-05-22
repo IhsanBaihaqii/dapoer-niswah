@@ -339,6 +339,7 @@ function addUnread() {
 window.addToCartFromChat = function (productIndex) {
   if (typeof window.addToCart === "function" && products[productIndex]) {
     const p = products[productIndex];
+    console.log("Adding to cart from chat:", p);
     window.addToCart(productIndex, p.ukuran, p.hargaNum);
 
     addTextMessage(`✅ ${p.nama} berhasil ditambahkan ke keranjang`, "bot");
