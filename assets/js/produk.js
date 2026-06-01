@@ -51,7 +51,7 @@ function renderProduk(data) {
         <div class="prod-sizes">
           <span class="size-chip">${p.ukuran}</span>
         </div>
-        <div class="prod-price">${p.harga}</div>
+        <div class="prod-price"><b>Rp ${formatNum(p.hargaNum)}</b></div>
         <div class="prod-actions">
           <button class="prod-cart-add" onclick="quickAddCart(${realIndex}, event)">
             <i class="fa-solid fa-basket-shopping"></i> + Keranjang
