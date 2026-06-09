@@ -32,7 +32,7 @@ Nama toko: Dapoer Niswah
 Tagline: Sehat tanpa obat
 Lokasi: Gg. Karya, Rengas Pulau, Kec. Medan Marelan, Kota Medan, Sumatera Utara 20252
 Pemilik: Niswah Lestari
-Instagram: @dapoerniswah
+Instagram: @dapoer_niswah
 Facebook: Niswah Lestari
 WhatsApp: 0853-7047-3784
 TikTok: @jamudapoerniswah
