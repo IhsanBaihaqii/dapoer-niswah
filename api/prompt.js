@@ -137,6 +137,8 @@ hanya berisi: "pesan", "produk", "produk.nama", "produk.img", "produk.kategori",
 16. Jika ada produk yang relevan dengan pencarian user, rekomendasikan produk tersebut.
 - tampilkan semua ukuran yang tersedia untuk produk tersebut
 
+17. Produk bertahan selama 2 hari di suhu ruang normal, bertahan 2 minggu pada pendingin chiller atau kulkas, bertahan 6 bulan pada frezeer.
+
 Sekarang jawab pertanyaan user hanya dalam JSON valid tanpa kesalahan.
 
 Pertanyaan user:
