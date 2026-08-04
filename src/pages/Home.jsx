@@ -140,9 +140,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUK SECTION */}
-      <ProductSection />
-
       {/* ABOUT SECTION */}
       <section
         id="about"
@@ -213,6 +210,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* PRODUK SECTION */}
+      <ProductSection />
 
       {/* TESTIMONI SECTION */}
       <section id="testimoni" className="py-24 px-6 bg-[var(--color-putih)]">
