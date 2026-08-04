@@ -219,6 +219,60 @@ window.loadChatBot = function () {
     scrollToBottom();
   }
 
+  function renderSocialMedia(sosmed) {
+    const container = document.createElement("div");
+    container.className = "message bot";
+
+    const bubble = document.createElement("div");
+    bubble.className = "message-bubble";
+
+    let html = `
+    <div><strong>Hubungi Kami</strong></div>
+
+    <div class="social-card">
+  `;
+
+    if (sosmed.wa) {
+      html += `
+      <a href="${sosmed.wa}" target="_blank" class="social-btn wa">
+        📱 WhatsApp
+      </a>
+    `;
+    }
+
+    if (sosmed.ig) {
+      html += `
+      <a href="${sosmed.ig}" target="_blank" class="social-btn ig">
+        📸 Instagram
+      </a>
+    `;
+    }
+
+    if (sosmed.fb) {
+      html += `
+      <a href="${sosmed.fb}" target="_blank" class="social-btn fb">
+        👍 Facebook
+      </a>
+    `;
+    }
+
+    if (sosmed.tiktok) {
+      html += `
+      <a href="${sosmed.tiktok}" target="_blank" class="social-btn tiktok">
+        🎵 TikTok
+      </a>
+    `;
+    }
+
+    html += `
+    </div>
+  `;
+
+    bubble.innerHTML = html;
+    container.appendChild(bubble);
+    return container;
+  }
+
   //  TYPING
   function addTypingIndicator() {
     if (isTyping) return;
@@ -263,34 +317,33 @@ window.loadChatBot = function () {
 
     const response = await getResponse(query);
 
-    // error
     if (response.error) {
       addTextMessage(response.pesan, "bot");
       return;
     }
 
-    // hanya text
-    if (!response.produk || response.produk.length === 0) {
-      addTextMessage(response.pesan || "Tidak ada produk ditemukan", "bot");
-      return;
+    // tampilkan pesan jika ada
+    if (response.pesan) {
+      addTextMessage(response.pesan, "bot");
     }
 
-    // produk banyak
-    if (response.produk.length > 1) {
-      const productContainer = renderMultipleProducts(
-        response.produk,
-        response.pesan || "Produk ditemukan",
-      );
-      chatMessages.appendChild(productContainer);
-      removeTypingIndicator();
-
-      scrollToBottom();
-      return;
+    // tampilkan produk jika ada
+    if (Array.isArray(response.produk) && response.produk.length > 0) {
+      if (response.produk.length === 1) {
+        chatMessages.appendChild(renderSingleProduct(response.produk[0]));
+      } else {
+        chatMessages.appendChild(
+          renderMultipleProducts(response.produk, "Rekomendasi Produk"),
+        );
+      }
     }
 
-    // single product
-    const productContainer = renderSingleProduct(response.produk[0]);
-    chatMessages.appendChild(productContainer);
+    // tampilkan sosmed jika ada
+    if (response.sosmed && typeof response.sosmed === "object") {
+      chatMessages.appendChild(renderSocialMedia(response.sosmed));
+    }
+
+    removeTypingIndicator();
     scrollToBottom();
   }
 
