@@ -1,5 +1,6 @@
 import ProductSection from "../components/ProductSection";
 import Logo from "../../assets/img/logo.png";
+import Toko from "../../assets/img/dapoer-niswah.png";
 
 export default function Home() {
   return (
@@ -146,10 +147,13 @@ export default function Home() {
         className="py-24 px-6 bg-[var(--color-coklat)] border-t border-[var(--color-kuning)]/20"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="bg-[var(--color-kuning)]/5 border-2 border-[var(--color-kuning)]/20 rounded-xl h-[400px] flex items-center justify-center relative">
-            <div className="text-[var(--color-kuning)]/20 text-9xl">
-              <i className="fa-solid fa-leaf"></i>
-            </div>
+          <div className="bg-[var(--color-kuning)]/5 border-2 border-[var(--color-kuning)]/20 rounded-xl h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center relative overflow-hidden p-4">
+            <img
+              src={Toko}
+              alt="Toko Dapoer Niswah"
+              className="w-full h-full object-cover rounded-lg"
+            />
+
             <div className="absolute -bottom-4 -right-4 bg-[var(--color-kuning)] text-[var(--color-coklat)] px-6 py-4 font-serif font-bold text-sm tracking-widest uppercase shadow-lg">
               Sejak Generasi
             </div>
