@@ -65,6 +65,17 @@
     "ukuran": "250 mL",
     "hargaNum": 30000
   },
+  {
+    "nama": "Jamu Manjakani (250 mL)",
+    "img": "assets/img/produk/manjakani.png",
+    "kategori": "250 mL",
+    "badge": null,
+    "bgColor": "#A0622A",
+    "manfaat": "Membersihkan rahim setelah nifas, Meningkatkan stamina, Mengencangkan organ-organ kewanitaan, mengobati gatal-gatal dan bau tidak sedap pada Vagina",
+    "komposisi": "Manjakani, kunyit putih, garam himalaya, madu murni, aren asli, kunyit putih, garam himalaya & rempah pilihan lainnya.",
+    "ukuran": "250 mL",
+    "hargaNum": 30000
+  },
 
   {
     "nama": "Jamu Bawang Putih Tunggal (250 mL)",

@@ -65,6 +65,17 @@
     "ukuran": "60 mL",
     "hargaNum": 8000
   },
+  {
+    "nama": "Jamu Manjakani (60 mL)",
+    "img": "assets/img/produk/manjakani.png",
+    "kategori": "60 mL",
+    "badge": null,
+    "bgColor": "#A0622A",
+    "manfaat": "Membersihkan rahim setelah nifas, Meningkatkan stamina, Mengencangkan organ-organ kewanitaan, mengobati gatal-gatal dan bau tidak sedap pada Vagina",
+    "komposisi": "Manjakani, kunyit putih, garam himalaya, madu murni, aren asli, kunyit putih, garam himalaya & rempah pilihan lainnya.",
+    "ukuran": "60 mL",
+    "hargaNum": 8000
+  },
 
   {
     "nama": "Jamu Bawang Putih Tunggal (60 mL)",
