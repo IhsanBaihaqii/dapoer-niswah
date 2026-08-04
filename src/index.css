@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kuning: #f5c518;
+  --color-kuning-deep: #d4a017;
+  --color-kuning-pale: #fdf3c0;
+  --color-orange: #e8621a;
+  --color-orange-light: #f28c4e;
+  --color-coklat: #2e1503;
+  --color-coklat-mid: #6b3a1f;
+  --color-coklat-muda: #a0622a;
+  --color-krem: #fbf3e4;
+  --color-krem-dark: #f0e2c8;
+  --color-hitam: #1a0c02;
+  --color-putih: #fffcf5;
+}
+
+body {
+  background-color: var(--color-krem);
+  color: var(--color-coklat);
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fraunces', serif;
+}
+
+/* Light transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
