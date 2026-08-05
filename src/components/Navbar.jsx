@@ -33,6 +33,14 @@ export default function Navbar() {
         </li>
         <li>
           <a
+            href="/#keunggulan"
+            className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
+          >
+            Keunggulan
+          </a>
+        </li>
+        <li>
+          <a
             href="/#about"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
@@ -45,6 +53,14 @@ export default function Navbar() {
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Produk
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#testimoni"
+            className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
+          >
+            Testimoni
           </a>
         </li>
       </ul>
@@ -91,6 +107,13 @@ export default function Navbar() {
             Home
           </a>
           <a
+            href="/#keunggulan"
+            onClick={() => setIsOpen(false)}
+            className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
+          >
+            Keunggulan
+          </a>
+          <a
             href="/#about"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
@@ -103,6 +126,13 @@ export default function Navbar() {
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Produk
+          </a>
+          <a
+            href="/#testimoni"
+            onClick={() => setIsOpen(false)}
+            className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
+          >
+            Testimoni
           </a>
         </div>
       )}

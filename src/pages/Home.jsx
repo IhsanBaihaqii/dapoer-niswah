@@ -1,4 +1,5 @@
 import ProductSection from "../components/ProductSection";
+import ContactSection from "../components/ContactSection";
 import Logo from "../../assets/img/logo.png";
 import Toko from "../../assets/img/dapoer-niswah.png";
 
@@ -280,6 +281,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Contact SECTION */}
+      <ContactSection />
     </div>
   );
 }
