@@ -81,3 +81,44 @@ products.forEach((product) => {
 });
 
 console.log("✅ SEO static files generated successfully for products!");
+
+// Generate sitemap.xml
+const sitemapPath = path.join(distDir, "sitemap.xml");
+const publicSitemapPath = path.resolve(__dirname, "../public/sitemap.xml");
+const today = new Date().toISOString().split("T")[0];
+
+let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://dapoerniswah.vercel.app/</loc>
+  <lastmod>${today}</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+</url>
+`;
+
+products.forEach((product) => {
+  routes.forEach((route) => {
+    sitemapContent += `
+<url>
+  <loc>https://dapoerniswah.vercel.app/${route}/${product.slug}</loc>
+  <lastmod>${today}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>`;
+  });
+});
+
+sitemapContent += `\n</urlset>`;
+
+fs.writeFileSync(sitemapPath, sitemapContent);
+if (fs.existsSync(path.resolve(__dirname, "../public"))) {
+  fs.writeFileSync(publicSitemapPath, sitemapContent);
+}
+
+console.log("✅ sitemap.xml generated successfully!");
