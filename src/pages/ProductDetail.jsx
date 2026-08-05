@@ -10,6 +10,16 @@ export default function ProductDetail({ focus }) {
   const product = products.find((p) => p.slug === slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const title =
+    focus === "manfaat"
+      ? `Manfaat ${product.nama} | Dapoer Niswah`
+      : focus === "komposisi"
+        ? `Komposisi ${product.nama} | Dapoer Niswah`
+        : `${product.nama} | Dapoer Niswah`;
+
+  const description =
+    focus === "komposisi" ? product.komposisi : product.manfaat;
+
   if (!product) {
     return <Navigate to="/" replace />;
   }
@@ -17,17 +27,17 @@ export default function ProductDetail({ focus }) {
   return (
     <>
       <Helmet>
-        <title>{product.nama} | Dapoer Niswah</title>
+        <title>{title}</title>
 
-        <meta name="description" content={product.manfaat} />
+        <meta name="description" content={description} />
 
-        <meta property="og:title" content={`${product.nama} | Dapoer Niswah`} />
+        <meta property="og:title" content={title} />
 
-        <meta property="og:description" content={product.manfaat} />
+        <meta property="og:description" content={description} />
 
         <meta
           property="og:image"
-          content={`https://dapoerniswah.vercel.app${product.img}`}
+          content={`https://dapoerniswah.vercel.app/assets/img/produk/${product.slug}.png`}
         />
 
         <link

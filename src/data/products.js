@@ -1,19 +1,10 @@
-import Foto_IKJM from "../../assets/img/produk/induk-kunyit-jahe-merah.png";
-import Foto_KA from "../../assets/img/produk/kunyit-asam.png";
-import Foto_BK from "../../assets/img/produk/beras-kencur.png";
-import Foto_PK from "../../assets/img/produk/pati-kunyit.png";
-import Foto_Temu from "../../assets/img/produk/temulawak.png";
-import Foto_Bersalin from "../../assets/img/produk/jamu-bersalin.png";
-import Foto_MK from "../../assets/img/produk/manjakani.png";
-import Foto_Baput from "../../assets/img/produk/bawang-putih-tunggal.png";
-
 export const products = [
   {
     id: "induk-kunyit-jahe-merah",
     slug: "induk-kunyit-jahe-merah",
     nama: "Induk Kunyit Jahe Merah",
     kategori: "Jamu",
-    img: Foto_IKJM,
+    img: "/assets/img/produk/induk-kunyit-jahe-merah.png",
     manfaat:
       "Meningkatkan daya tahan tubuh, kinerja otak dan stamina. Menurunkan kadar kolesterol, gula darah dan tekanan darah tinggi. Mengobati masuk angin, flu, batuk, dan sakit tenggorokan.",
     komposisi:
@@ -31,7 +22,7 @@ export const products = [
     slug: "kunyit-asam",
     nama: "Kunyit Asam",
     kategori: "Jamu",
-    img: Foto_KA,
+    img: "/assets/img/produk/kunyit-asam.png",
     manfaat:
       "Menurunkan berat badan, meredakan nyeri haid, menjaga kesehatan kulit, membantu detoksifikasi, serta meningkatkan sistem imun. Menghilangkan bau badan dan membersihkan darah kotor dalam tubuh.",
     komposisi:
@@ -49,7 +40,7 @@ export const products = [
     slug: "beras-kencur",
     nama: "Beras Kencur",
     kategori: "Jamu",
-    img: Foto_BK,
+    img: "/assets/img/produk/beras-kencur.png",
     manfaat:
       "Meningkatkan stamina, meredakan kelelahan, membantu pencernaan, serta mengurangi nyeri dan pegal. Menetralkan batuk, masuk angin, dan meredakan sakit tenggorokan. Mengatasi perut kembung dan mual.",
     komposisi:
@@ -67,7 +58,7 @@ export const products = [
     slug: "pati-kunyit",
     nama: "Jamu Pati Kunyit",
     kategori: "Jamu",
-    img: Foto_PK,
+    img: "/assets/img/produk/pati-kunyit.png",
     manfaat:
       "Mengobati luka dalam dan panas dalam. Mengatasi gangguan seperti asam lambung, diare dan gangguan pencernaan lainnya. Mengobati asma dan penyakit paru-paru. Mengobati wasir dan nyeri pada hulu hati.",
     komposisi:
@@ -85,7 +76,7 @@ export const products = [
     slug: "temulawak",
     nama: "Jamu Temulawak",
     kategori: "Jamu",
-    img: Foto_Temu,
+    img: "/assets/img/produk/temulawak.png",
     manfaat:
       "Meningkatkan daya tahan tubuh dan nafsu makan. Mengatasi gangguan pencernaan seperti asam lambung, diare, dan perut kembung. Mengobati demam berdarah, radang tenggorokan dan panas dalam. Meningkatkan fungsi hati dan mengobati penyakit hati.",
     komposisi:
@@ -103,7 +94,7 @@ export const products = [
     slug: "jamu-bersalin",
     nama: "Jamu Bersalin",
     kategori: "Jamu",
-    img: Foto_Bersalin,
+    img: "/assets/img/produk/jamu-bersalin.png",
     manfaat:
       "Mempercepat penyembuhan pasca-melahirkan, mengurangi nyeri, serta meningkatkan energi dan stamina bagi ibu yang baru melahirkan. Membantu mengembalikan kebugaran tubuh setelah melahirkan dan meredakan kelelahan. Memperlancar ASI dan menghilangkan setres. Mempermudah keluarnya gumpalan darah.",
     komposisi:
@@ -121,7 +112,7 @@ export const products = [
     slug: "manjakani",
     nama: "Jamu Manjakani",
     kategori: "Jamu",
-    img: Foto_MK,
+    img: "/assets/img/produk/manjakani.png",
     manfaat:
       "Membersihkan rahim setelah nifas, Meningkatkan stamina, Mengencangkan organ-organ kewanitaan, mengobati gatal-gatal dan bau tidak sedap pada Vagina.",
     komposisi:
@@ -139,7 +130,7 @@ export const products = [
     slug: "bawang-putih-tunggal",
     nama: "Jamu Bawang Putih Tunggal",
     kategori: "Jamu",
-    img: Foto_Baput,
+    img: "/assets/img/produk/bawang-putih-tunggal.png",
     manfaat:
       "Meningkatkan metabolisme tubuh, meningkatkan sistem kekebalan tubuh, meredakan peradangan, serta membantu menurunkan tekanan darah dan kadar kolesterol. Mematikan pertumbuhan sel kanker. Mengobati diabetes, asam urat, asma dan penyakit paru-paru. Menurunkan kadar kolestrol dan mencegah rusaknya sperma.",
     komposisi:
