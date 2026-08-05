@@ -51,7 +51,7 @@ products.forEach((product) => {
     );
     html = html.replace(
       /<meta\s+property="og:image"\s+content="[^"]*"\s*\/>/g,
-      `<meta property="og:image" content="${image}" />`,
+      `<meta property="og:image" content="https://dapoerniswah.vercel.app${image}" />`,
     );
     html = html.replace(
       /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/g,
@@ -69,7 +69,7 @@ products.forEach((product) => {
     );
     html = html.replace(
       /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/g,
-      `<meta name="twitter:image" content="${image}" />`,
+      `<meta name="twitter:image" content="https://dapoerniswah.vercel.app${image}" />`,
     );
     html = html.replace(
       /<meta\s+name="twitter:url"\s+content="[^"]*"\s*\/>/g,
