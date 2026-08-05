@@ -21,6 +21,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-kuning",
   },
@@ -37,6 +39,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-kuning",
   },
@@ -53,6 +57,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-kuning-deep",
   },
@@ -69,6 +75,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-kuning-deep",
   },
@@ -85,6 +93,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-kuning-deep",
   },
@@ -101,6 +111,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-coklat-muda",
   },
@@ -117,6 +129,8 @@ export const products = [
     ukuran: [
       { size: "60 mL", harga: 8000 },
       { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
     ],
     bgColor: "bg-coklat-muda",
   },
@@ -131,8 +145,8 @@ export const products = [
     komposisi:
       "Bawang putih tunggal, kunyit putih, jeruk lemon peras, madu murni, cuka apel, garam himalaya & rempah pilihan lainnya.",
     ukuran: [
-      { size: "60 mL", harga: 45000 },
-      { size: "250 mL", harga: 90000 },
+      { size: "60 mL", harga: 35000 },
+      { size: "250 mL", harga: 100000 },
     ],
     bgColor: "bg-coklat-muda",
     badge: "Premium",
