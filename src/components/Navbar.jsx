@@ -24,52 +24,52 @@ export default function Navbar() {
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-8 list-none">
         <li>
-          <a
-            href="/#home"
+          <Link
+            to="/#home"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/#keunggulan"
+          <Link
+            to="/#keunggulan"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Keunggulan
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/#about"
+          <Link
+            to="/#about"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Tentang
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/#produk"
+          <Link
+            to="/#produk"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Produk
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/#testimoni"
+          <Link
+            to="/#testimoni"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Testimoni
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/#contact"
+          <Link
+            to="/#contact"
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
           >
             Kontak
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -107,48 +107,48 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-[var(--color-coklat)] border-b-4 border-[var(--color-kuning)] p-6 flex flex-col gap-4 md:hidden shadow-xl">
-          <a
-            href="/#home"
+          <Link
+            to="/#home"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Home
-          </a>
-          <a
-            href="/#keunggulan"
+          </Link>
+          <Link
+            to="/#keunggulan"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Keunggulan
-          </a>
-          <a
-            href="/#about"
+          </Link>
+          <Link
+            to="/#about"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Tentang
-          </a>
-          <a
-            href="/#produk"
+          </Link>
+          <Link
+            to="/#produk"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Produk
-          </a>
-          <a
-            href="/#testimoni"
+          </Link>
+          <Link
+            to="/#testimoni"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Testimoni
-          </a>
-          <a
-            href="/#contact"
+          </Link>
+          <Link
+            to="/#contact"
             onClick={() => setIsOpen(false)}
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Kontak
-          </a>
+          </Link>
         </div>
       )}
     </nav>

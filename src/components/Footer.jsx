@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--color-hitam)] text-[var(--color-coklat-muda)] pt-16 px-6 pb-8 border-t-4 border-[var(--color-kuning)]">
@@ -11,30 +13,30 @@ export default function Footer() {
             kesehatan keluarga Indonesia dengan cara yang sesungguhnya.
           </p>
           <div className="flex gap-3">
-            <a
+            <Link
               href="https://wa.me/6285370473784"
               target="_blank"
               rel="noreferrer"
               className="w-10 h-10 flex items-center justify-center bg-[var(--color-kuning)]/10 border border-[var(--color-kuning)]/30 rounded-lg hover:bg-[var(--color-kuning)] hover:text-[var(--color-coklat)] transition-colors text-[var(--color-kuning-pale)]"
             >
               <i className="fa-brands fa-whatsapp text-lg"></i>
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://instagram.com/dapoer_niswah"
               target="_blank"
               rel="noreferrer"
               className="w-10 h-10 flex items-center justify-center bg-[var(--color-kuning)]/10 border border-[var(--color-kuning)]/30 rounded-lg hover:bg-[var(--color-kuning)] hover:text-[var(--color-coklat)] transition-colors text-[var(--color-kuning-pale)]"
             >
               <i className="fa-brands fa-instagram text-lg"></i>
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://facebook.com/niswah.lestari"
               target="_blank"
               rel="noreferrer"
               className="w-10 h-10 flex items-center justify-center bg-[var(--color-kuning)]/10 border border-[var(--color-kuning)]/30 rounded-lg hover:bg-[var(--color-kuning)] hover:text-[var(--color-coklat)] transition-colors text-[var(--color-kuning-pale)]"
             >
               <i className="fa-brands fa-facebook-f text-lg"></i>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -44,44 +46,44 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <a
-                href="/#"
+              <Link
+                to="/#"
                 className="text-[var(--color-coklat-muda)] hover:text-[var(--color-kuning)] transition-colors text-sm"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/#keunggulan"
+              <Link
+                to="/#keunggulan"
                 className="text-[var(--color-coklat-muda)] hover:text-[var(--color-kuning)] transition-colors text-sm"
               >
                 keunggulan
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/#about"
+              <Link
+                to="/#about"
                 className="text-[var(--color-coklat-muda)] hover:text-[var(--color-kuning)] transition-colors text-sm"
               >
                 Tentang
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/#produk"
+              <Link
+                to="/#produk"
                 className="text-[var(--color-coklat-muda)] hover:text-[var(--color-kuning)] transition-colors text-sm"
               >
                 Produk
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/#testimoni"
+              <Link
+                to="/#testimoni"
                 className="text-[var(--color-coklat-muda)] hover:text-[var(--color-kuning)] transition-colors text-sm"
               >
                 Testioni
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -92,8 +94,8 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <a
-                href="https://maps.app.goo.gl/4y85oj9aqaYgbtXk9"
+              <Link
+                to="https://maps.app.goo.gl/4y85oj9aqaYgbtXk9"
                 className="flex gap-3 text-sm text-[var(--color-coklat-muda)]/80"
               >
                 <i className="fa-solid fa-location-dot mt-1 text-[var(--color-kuning)]"></i>
@@ -101,16 +103,16 @@ export default function Footer() {
                   Gg. Karya, Rengas Pulau, Kec. Medan Marelan, Kota Medan,
                   Sumatera Utara
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://wa.me/6285370473784"
+              <Link
+                to="https://wa.me/6285370473784"
                 className="flex gap-3 text-sm text-[var(--color-coklat-muda)]/80"
               >
                 <i className="fa-brands fa-whatsapp mt-1 text-[var(--color-kuning)]"></i>
                 <span>+62 853-7047-3784</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

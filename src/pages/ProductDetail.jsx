@@ -1,16 +1,12 @@
 import { useParams, Navigate, Link } from "react-router-dom";
 import { products } from "../data/products";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import OrderModal from "../components/OrderModal";
 
 export default function ProductDetail({ focus }) {
   const { slug } = useParams();
   const product = products.find((p) => p.slug === slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
 
   if (!product) {
     return <Navigate to="/" replace />;
