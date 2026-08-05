@@ -63,6 +63,14 @@ export default function Navbar() {
             Testimoni
           </a>
         </li>
+        <li>
+          <a
+            href="/#contact"
+            className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] text-sm font-bold uppercase tracking-wider transition-colors"
+          >
+            Kontak
+          </a>
+        </li>
       </ul>
 
       <div className="flex items-center gap-4">
@@ -133,6 +141,13 @@ export default function Navbar() {
             className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
           >
             Testimoni
+          </a>
+          <a
+            href="/#contact"
+            onClick={() => setIsOpen(false)}
+            className="text-[var(--color-kuning-pale)] hover:text-[var(--color-kuning)] font-bold uppercase tracking-wider text-sm"
+          >
+            Kontak
           </a>
         </div>
       )}
