@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
+import Chat from "./pages/Chat";
 
 import ScrollToHash from "./components/ScrollToHash";
 
@@ -23,6 +24,7 @@ export default function App() {
             element={<ProductDetail focus="komposisi" />}
           />
         </Route>
+        <Route path="chat" element={<Chat />} />
       </Routes>
     </>
   );
