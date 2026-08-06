@@ -1,71 +1,91 @@
 import { useParams, Navigate, Link } from "react-router-dom";
-import { products } from "../data/products";
-import { useState } from "react";
-import OrderModal from "../components/OrderModal";
-
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+import { products } from "../data/products";
+import OrderModal from "../components/OrderModal";
 
 export default function ProductDetail({ focus }) {
   const { slug } = useParams();
   const product = products.find((p) => p.slug === slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const title =
-    focus === "manfaat"
-      ? `Manfaat ${product.nama} | Dapoer Niswah`
-      : focus === "komposisi"
-        ? `Komposisi ${product.nama} | Dapoer Niswah`
-        : `${product.nama} | Dapoer Niswah`;
-
-  const description =
-    focus === "komposisi" ? product.komposisi : product.manfaat;
-
+  // Redirect jika produk tidak ditemukan
   if (!product) {
     return <Navigate to="/" replace />;
   }
 
+  // Metadata dinamis
+  const pageTitle = {
+    manfaat: `Manfaat ${product.nama} | Dapoer Niswah`,
+    komposisi: `Komposisi ${product.nama} | Dapoer Niswah`,
+    default: `${product.nama} | Dapoer Niswah`,
+  };
+
+  const metaDescription =
+    focus === "komposisi" ? product.komposisi : product.manfaat;
+  const ogImage = `https://dapoerniswah.vercel.app/assets/img/produk/${product.slug}.png`;
+  const canonicalUrl = `https://dapoerniswah.vercel.app/produk/${product.slug}`;
+
   return (
     <>
       <Helmet>
-        <title>{title}</title>
-
-        <meta name="description" content={description} />
-
-        <meta property="og:title" content={title} />
-
-        <meta property="og:description" content={description} />
-
+        <title>{pageTitle[focus] || pageTitle.default}</title>
+        <meta name="description" content={metaDescription} />
         <meta
-          property="og:image"
-          content={`https://dapoerniswah.vercel.app/assets/img/produk/${product.slug}.png`}
+          property="og:title"
+          content={pageTitle[focus] || pageTitle.default}
         />
-
-        <link
-          rel="canonical"
-          href={`https://dapoerniswah.vercel.app/produk/${product.slug}`}
-        />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={ogImage} />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
-      <div className="min-h-screen bg-[var(--color-krem)] py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <a
-            href="/#produk"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-coklat-muda)] hover:text-[var(--color-orange)] transition-colors mb-10"
-          >
-            <i className="fa-solid fa-arrow-left"></i> Kembali ke Produk
-          </a>
 
-          <div className="bg-[var(--color-putih)] rounded-3xl border-4 border-[var(--color-kuning)] overflow-hidden shadow-xl flex flex-col md:flex-row">
-            <div
+      <main className="min-h-screen bg-[var(--color-krem)] py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          {/* Breadcrumb Navigasi */}
+          <nav className="sticky top-20 z-40 flex items-center gap-2 text-sm mb-8 bg-[var(--color-putih)] p-3 rounded-xl shadow-sm border border-[var(--color-krem-dark)]">
+            <Link
+              to="/"
+              className="text-[var(--color-coklat-muda)] hover:text-[var(--color-orange)] transition-colors font-medium"
+            >
+              <i className="fa-solid fa-house mr-1" aria-hidden="true" />{" "}
+              Beranda
+            </Link>
+            <i
+              className="fa-solid fa-chevron-right text-[var(--color-coklat-muda)] text-xs"
+              aria-hidden="true"
+            />
+            <Link
+              to="/#produk"
+              className="text-[var(--color-coklat-muda)] hover:text-[var(--color-orange)] transition-colors font-medium"
+            >
+              Produk
+            </Link>
+            <i
+              className="fa-solid fa-chevron-right text-[var(--color-coklat-muda)] text-xs"
+              aria-hidden="true"
+            />
+            <span className="text-[var(--color-coklat)] font-bold truncate max-w-[150px]">
+              {product.nama}
+            </span>
+          </nav>
+
+          {/* Kartu Produk */}
+          <article className="bg-[var(--color-putih)] rounded-3xl border-4 border-[var(--color-kuning)] overflow-hidden shadow-xl flex flex-col md:flex-row">
+            {/* Gambar Produk */}
+            <figure
               className={`md:w-2/5 p-10 flex items-center justify-center border-b-4 md:border-b-0 md:border-r-4 border-[var(--color-kuning)] ${product.bgColor}/20`}
             >
               <img
                 src={product.img}
                 alt={product.nama}
                 className="w-full max-w-[250px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                loading="lazy"
               />
-            </div>
+            </figure>
 
-            <div className="md:w-3/5 p-10">
+            {/* Detail Produk */}
+            <section className="md:w-3/5 p-10">
               {product.badge && (
                 <span className="inline-block bg-[var(--color-orange)] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
                   {product.badge}
@@ -76,18 +96,26 @@ export default function ProductDetail({ focus }) {
                 {product.nama}
               </h1>
 
-              <div className="text-[var(--color-orange)] font-black text-2xl mb-8">
+              <p className="text-[var(--color-orange)] font-black text-2xl mb-8">
                 Mulai Rp {product.ukuran[0].harga.toLocaleString("id-ID")}
-              </div>
+              </p>
 
+              {/* Manfaat & Komposisi */}
               <div className="space-y-6 mb-8">
                 {(!focus || focus === "manfaat") && (
                   <div
-                    className={`p-5 rounded-xl ${focus === "manfaat" ? "bg-[var(--color-kuning)]/10 border-2 border-[var(--color-kuning)]" : "bg-[var(--color-krem-dark)]/50"}`}
+                    className={`p-5 rounded-xl ${
+                      focus === "manfaat"
+                        ? "bg-[var(--color-kuning)]/10 border-2 border-[var(--color-kuning)]"
+                        : "bg-[var(--color-krem-dark)]/50"
+                    }`}
                   >
                     <h3 className="text-xs font-bold text-[var(--color-coklat-muda)] uppercase tracking-widest mb-2 flex items-center gap-2">
-                      <i className="fa-solid fa-heart-pulse"></i> Khasiat &
-                      Manfaat
+                      <i
+                        className="fa-solid fa-heart-pulse"
+                        aria-hidden="true"
+                      />{" "}
+                      Khasiat & Manfaat
                     </h3>
                     <p className="text-[var(--color-coklat-mid)] text-sm leading-relaxed">
                       {product.manfaat}
@@ -97,10 +125,15 @@ export default function ProductDetail({ focus }) {
 
                 {(!focus || focus === "komposisi") && (
                   <div
-                    className={`p-5 rounded-xl ${focus === "komposisi" ? "bg-[var(--color-kuning)]/10 border-2 border-[var(--color-kuning)]" : "bg-[var(--color-krem-dark)]/50"}`}
+                    className={`p-5 rounded-xl ${
+                      focus === "komposisi"
+                        ? "bg-[var(--color-kuning)]/10 border-2 border-[var(--color-kuning)]"
+                        : "bg-[var(--color-krem-dark)]/50"
+                    }`}
                   >
                     <h3 className="text-xs font-bold text-[var(--color-coklat-muda)] uppercase tracking-widest mb-2 flex items-center gap-2">
-                      <i className="fa-solid fa-leaf"></i> Komposisi Alami
+                      <i className="fa-solid fa-leaf" aria-hidden="true" />{" "}
+                      Komposisi Alami
                     </h3>
                     <p className="text-[var(--color-coklat-mid)] text-sm leading-relaxed">
                       {product.komposisi}
@@ -109,25 +142,27 @@ export default function ProductDetail({ focus }) {
                 )}
               </div>
 
+              {/* Pilihan Ukuran */}
               <div className="mb-8">
                 <h3 className="text-xs font-bold text-[var(--color-coklat-muda)] uppercase tracking-widest mb-3">
                   Pilihan Ukuran Tersedia
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  {product.ukuran.map((u, i) => (
+                  {product.ukuran.map((ukuran, index) => (
                     <div
-                      key={i}
-                      className={`px-5 py-2.5 rounded-lg border-2 text-sm font-bold transition-all bg-[var(--color-krem)] border-[var(--color-krem-dark)] text-[var(--color-coklat-mid)]`}
+                      key={index}
+                      className="px-5 py-2.5 rounded-lg border-2 text-sm font-bold transition-all bg-[var(--color-krem)] border-[var(--color-krem-dark)] text-[var(--color-coklat-mid)]"
                     >
-                      <span className="block">{u.size}</span>
+                      <span className="block">{ukuran.size}</span>
                       <span className="text-[10px] opacity-80 block mt-0.5">
-                        Rp {u.harga.toLocaleString("id-ID")}
+                        Rp {ukuran.harga.toLocaleString("id-ID")}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
 
+              {/* Tombol Aksi */}
               <div className="pt-6 border-t-2 border-[var(--color-krem-dark)]">
                 <h3 className="text-xs font-bold text-[var(--color-coklat-muda)] uppercase tracking-widest mb-4">
                   Pesan Melalui
@@ -139,27 +174,35 @@ export default function ProductDetail({ focus }) {
                     rel="noreferrer"
                     className="flex items-center justify-center gap-2 bg-[#25d366] hover:bg-[#1ebe5c] text-white px-5 py-3 rounded-xl font-bold text-sm transition-transform hover:-translate-y-1 shadow-sm"
                   >
-                    <i className="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    <i
+                      className="fa-brands fa-whatsapp text-lg"
+                      aria-hidden="true"
+                    />{" "}
+                    WhatsApp
                   </a>
                   <button
                     onClick={() => setIsModalOpen(true)}
                     className="flex items-center justify-center gap-2 bg-[var(--color-kuning)] hover:bg-[var(--color-kuning-deep)] text-[var(--color-coklat)] px-5 py-3 rounded-xl font-bold text-sm transition-transform hover:-translate-y-1 shadow-sm"
                   >
-                    <i className="fa-solid fa-basket-shopping text-lg"></i> +
-                    Keranjang
+                    <i
+                      className="fa-solid fa-basket-shopping text-lg"
+                      aria-hidden="true"
+                    />{" "}
+                    + Keranjang
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
+            </section>
+          </article>
         </div>
 
+        {/* Modal Keranjang */}
         <OrderModal
           product={product}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
-      </div>
+      </main>
     </>
   );
 }
