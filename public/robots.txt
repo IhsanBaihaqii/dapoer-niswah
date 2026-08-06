@@ -1,3 +1,10 @@
-User-Agent: *
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://dapoerniswah.vercel.app/sitemap.xml
+
+# Disallow admin or private areas
+Disallow: /admin/
+Disallow: /private/
