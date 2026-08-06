@@ -211,7 +211,6 @@ console.log("✅ robots.txt generated successfully!");
 console.log("\n📊 ======== GENERATION SUMMARY ========");
 console.log(`📄 Product pages: ${products.length * productRoutes.length}`);
 console.log(`📄 Static pages: ${staticPages.length}`);
-console.log(`📄 Root pages: ${rootPages.length}`);
 console.log(`🗺️ Sitemap: sitemap.xml`);
 console.log(`🤖 Robots: robots.txt`);
 console.log("✅ All SEO files generated successfully!");
