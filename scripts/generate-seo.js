@@ -100,6 +100,12 @@ let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
+<url>
+  <loc>https://dapoerniswah.vercel.app/chat</loc>
+  <lastmod>${today}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
 `;
 
 products.forEach((product) => {
