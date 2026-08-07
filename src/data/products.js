@@ -143,16 +143,14 @@ export const products = [
     badge: "Premium",
   },
   {
-    id: "curry-puff",
-    slug: "curry-puff",
-    nama: "Curry Puff",
+    id: "risol",
+    slug: "risol",
+    nama: "Risol isi 5",
     kategori: "Frozen Food",
-    img: "https://placehold.co/400x400/e8621a/fffcf5?text=Curry+Puff",
+    img: "/assets/img/produk/frozen/risol.png",
     manfaat:
       "Cemilan gurih dan lezat, renyah di luar dan kaya rasa di dalam. Cocok untuk dinikmati bersama keluarga di waktu santai atau sebagai hidangan tamu.",
-    komposisi:
-      "Tepung terigu pilihan, kentang, wortel, bumbu kari khas, potongan daging ayam.",
-    ukuran: [{ size: "1 Pack", harga: 30000 }],
+    ukuran: [{ size: "1 Pack isi 5", harga: 20000 }],
     bgColor: "bg-orange",
     badge: "Baru",
   },
