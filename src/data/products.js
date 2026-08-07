@@ -154,4 +154,16 @@ export const products = [
     bgColor: "bg-orange",
     badge: "Baru",
   },
+  {
+    id: "curry-puff",
+    slug: "curry-puff",
+    nama: "Curry Puff isi 5",
+    kategori: "Frozen Food",
+    img: "/assets/img/produk/frozen/curry-puff.png",
+    manfaat:
+      "Cemilan gurih dan lezat, renyah di luar dan kaya rasa di dalam. Cocok untuk dinikmati bersama keluarga di waktu santai atau sebagai hidangan tamu.",
+    ukuran: [{ size: "1 Pack isi 5", harga: 35000 }],
+    bgColor: "bg-orange",
+    badge: "Baru",
+  },
 ];
