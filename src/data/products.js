@@ -4,7 +4,7 @@ export const products = [
     slug: "induk-kunyit-jahe-merah",
     nama: "Induk Kunyit Jahe Merah",
     kategori: "Jamu",
-    img: "/assets/img/produk/induk-kunyit-jahe-merah.png",
+    img: "/assets/img/produk/jamu-jahe-merah.png",
     manfaat:
       "Meningkatkan daya tahan tubuh, kinerja otak dan stamina. Menurunkan kadar kolesterol, gula darah dan tekanan darah tinggi. Mengobati masuk angin, flu, batuk, dan sakit tenggorokan.",
     komposisi:
@@ -159,6 +159,34 @@ export const products = [
     ],
     bgColor: "bg-coklat-muda",
     badge: "Premium",
+  },
+  {
+    id: "jamu-celup-kunir-singset",
+    slug: "jamu-celup-kunir-singset",
+    nama: "Jamu Celup Kunir Singset",
+    kategori: "Jamu",
+    img: "/assets/img/produk/jamu-celup-kunir-singset.png",
+    manfaat:
+      "Meningkatkan daya tahan tubuh dan energi, menurunkan berat badan, menyeimbangkan hormonal, mengurangi peradangan, membantu detoksifikasi, mencerahkan kulit dan meningkatkan kualitas tidur",
+    komposisi:
+      "Jahe merah, serai, gingseng, lemon, madu murni, induk kunyit, lengkuas dan rempah lainnya.",
+    ukuran: [{ size: "1 pouch (isi 15)", harga: 35000 }],
+    bgColor: "bg-coklat-muda",
+    badge: "Celup",
+  },
+  {
+    id: "jamu-celup-induk-kunyit-jahe-merah",
+    slug: "jamu-celup-induk-kunyit-jahe-merah",
+    nama: "Jamu Celup Induk kunyit Jahe Merah",
+    kategori: "Jamu",
+    img: "/assets/img/produk/jamu-celup-induk-kunyit-jahe-merah.png",
+    manfaat:
+      "Meningkatkan daya tahan tubuh, kinerja otak dan stamina. Menurunkan kadar kolesterol, gula darah dan tekanan darah tinggi. Mengobati masuk angin, flu, batuk, dan sakit tenggorokan.",
+    komposisi:
+      "Jahe merah, serai, kunyit putih, garam himalaya, gingseng, induk kunyit, kencur, madu murni & rempah pilihan lainnya.",
+    ukuran: [{ size: "1 pouch (isi 15)", harga: 35000 }],
+    bgColor: "bg-coklat-muda",
+    badge: "Celup",
   },
   {
     id: "risol",
