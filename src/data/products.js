@@ -126,6 +126,24 @@ export const products = [
     bgColor: "bg-coklat-muda",
   },
   {
+    id: "sembilan-rimpang",
+    slug: "sembilan-rimpang",
+    nama: "Jamu Sembilan Rimpang",
+    kategori: "Jamu",
+    img: "/assets/img/produk/sembilan-rimpang.png",
+    manfaat:
+      "Meningkatkan daya tahan tubu, membersihkan rahim, mengurangi peradangan, meningkatkan pencernaan, menjaga kesehatan kulit dan jantung, menyeimbangkan hormonal dan mengatasi stres.",
+    komposisi:
+      "Induk kunyit, jahe merah, kurma muda, kunyit putih, temu mangga, kencur, zuriat, habbatusauda, buah zaitun, temulawak, madu murni dan rempah lainnya",
+    ukuran: [
+      { size: "60 mL", harga: 8000 },
+      { size: "250 mL", harga: 30000 },
+      { size: "500 mL", harga: 50000 },
+      { size: "1 liter", harga: 90000 },
+    ],
+    bgColor: "bg-coklat-muda",
+  },
+  {
     id: "bawang-putih-tunggal",
     slug: "bawang-putih-tunggal",
     nama: "Jamu Bawang Putih Tunggal",
